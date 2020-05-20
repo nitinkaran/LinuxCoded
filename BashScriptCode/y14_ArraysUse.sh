@@ -24,3 +24,19 @@ do
 	count=$((count + 1))
 done
 
+
+
+echo; echo;
+
+#HOW TO DECLARE AND ARRAY AND INITIALIZE THEM
+
+declare -a arrayC
+arrayC=('one' 'two' 'three' 'four' 'five')
+
+count=1
+for i in ${arrayC[*]}
+do
+	printf "The value at index = %d is : %s \n" $count $i
+	count=$((count + 1))
+done
+
