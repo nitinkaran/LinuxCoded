@@ -1,0 +1,25 @@
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+.game-board {
+  display: flex;
+  flex-direction: row;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.reset {
+  clear: both;
+  content: "";
+  display: table;
+}
