@@ -49,21 +49,27 @@ class AddTodo extends Component {
     }
 }
 
-export default connect(
-    null,
-    {addTodo}
-)(AddTodo);
+/**
+ * 
+ * @param {*} dispatch 
+ * This code also works just that its not dispatching action deliberatedly,
+ * instead we are just calling the action creator
+ */
+// export default connect(
+//     null,
+//     {addTodo}
+// )(AddTodo); 
 
 
 /**
  * check the code and find the reason of dispatch and action
  */
-// const mapDispatchToProps = (dispatch) => {  
-//     return {
-//         addTodo : () => {
-//             return addTodo();
-//         }
-//     };
-// };
+const mapDispatchToProps = (dispatch) => {  
+    return {
+        addTodo : (text) => {
+            dispatch(addTodo(text));
+        }
+    };
+};
 
-// export default connect(null, mapDispatchToProps)(AddTodo);
+export default connect(null, mapDispatchToProps)(AddTodo);
