@@ -1,28 +1,25 @@
 import React from "react";
-import { connect } from "react-redux";
 import _isEmpty from "lodash/isEmpty";
-import { getFilteredValues } from "../Redux/todoSelector";
 import Todo from "./Todo";
 
-const TodoList = ({todoArray}) => {
+const TodoList = ({todoArray, TodoProps}) => {
     return (
-        <ul className="todo-list">
+        <div className="parent-todo-list">            
             {
-                _isEmpty(todoArray) ? 'Hurray !! No Todos !!!!' :
-                todoArray.map((item, index) => {
-                    return <Todo item={item} key={index} />
-                })
-            }
-        </ul>
+                _isEmpty(todoArray) &&
+                <span className="happy-message">
+                    'Hurray !! No Todos !!!!'
+                </span>
+            } 
+            <ul className="todo-list">
+                {
+                    todoArray.map((item, index) => {
+                        return <Todo item={item} key={index} {...TodoProps} />
+                    })
+                }
+            </ul>           
+        </div>
     );
 };
 
-const mapStateToProps = (state) => {
-    const { visibilityFilter: filter } = state;
-    const todoArray = getFilteredValues(state, filter);
-    return {
-        todoArray
-    };
-};
-
-export default connect(mapStateToProps, null)(TodoList);
+export default TodoList;

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
 import _bindAll from 'lodash/bindAll';
-import { addTodo } from "../Redux/Actions";
 
-class AddTodoComponent extends Component {
+export default class AddTodoComponent extends Component {
     constructor(props) {
         super(props);
 
@@ -35,11 +33,12 @@ class AddTodoComponent extends Component {
                 <input 
                     type="text"
                     className="input-box"
+                    placeholder="Enter Text ..."
                     value={this.state.message}
                     onChange={this.updateMessage}
                 />
                 <button
-                    className="button"
+                    className="add-button"
                     onClick={this.handleClick}
                 >
                     ADD
@@ -48,13 +47,3 @@ class AddTodoComponent extends Component {
         );
     }
 }
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addTodo: (text) => {
-            dispatch(addTodo(text));
-        }
-    }
-};
-
-export default connect (null, mapDispatchToProps)(AddTodoComponent);

@@ -1,14 +1,14 @@
 .listed-item {
     font-family: monospace;
     cursor: pointer;
-    line-height: 2.5;
+    line-height: 25px;
     font-size: x-large;
 }
 
 .listed-item-ticked {
     font-family: monospace;
     cursor: pointer;
-    line-height: 2.5;
+    line-height: 25px;
     text-decoration: line-through;
     color: black;
     font-size: x-large;
@@ -25,4 +25,58 @@
     margin: 0 0.3rem;
     cursor: pointer;
     border-bottom: 1px solid black;
+}
+
+.todo-form {
+    text-align: center;
+}
+
+.visibilityFilters {
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.todo-item {
+    text-align: left;
+}
+
+.emoji {
+    font-size: 40px;
+}
+
+.parent-todo-list {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 5px;
+}
+
+.input-box {
+    width: 26%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 18px;
+}
+
+.add-button{
+    width: 11%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 114%;
+    background: rgb(28, 184, 65);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
+}
+
+.todo-title {
+    font-family: monospace;
+    cursor: pointer;
+    line-height: 2.5;
+    font-size: x-large;
+    text-align: center;
 }
