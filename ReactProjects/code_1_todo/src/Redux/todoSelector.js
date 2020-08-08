@@ -26,6 +26,6 @@ export const getFilteredValues = (store={}, filter) => {
         case VISIBILITY_FILTER.COMPLETED : return todoArray.filter(item => {return item.completed === true});
         case VISIBILITY_FILTER.INCOMPLETE : return todoArray.filter(item => {return item.completed === false});
         case VISIBILITY_FILTER.ALL : 
-        default : return todoArray
+        default : return todoArray;
     }
  };

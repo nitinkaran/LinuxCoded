@@ -1,6 +1,4 @@
 import React from 'react';
-import { filter } from "../Redux/Actions";
-import { connect } from "react-redux";
 import { VISIBILITY_FILTER } from "../VisibilityFilter";
 
 const matchFilter = (visibilityFilter, item) => {
@@ -28,19 +26,4 @@ const Filters = ({visibilityFilter, filter}) => {
     );
 };
 
-const mapStateToProps = (state) => {
-    const { visibilityFilter } = state;
-    return {
-        visibilityFilter
-    };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        filter : (value) => {
-            dispatch(filter(value));
-        }
-    }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Filters);
+export default Filters;
