@@ -7,7 +7,8 @@ const TodoAppMainView = ({
     AddProps,
     FilterProps,
     TodoProps,
-    TodoListProps
+    TodoListProps,
+    DeleteTodoProps
 }) => {
     return (
         <div className="todo-main-view">

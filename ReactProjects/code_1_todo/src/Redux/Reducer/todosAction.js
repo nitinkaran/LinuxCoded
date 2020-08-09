@@ -1,4 +1,4 @@
-import { ADD, TOGGLE } from "../../ActionTypes";
+import { ADD, TOGGLE, DELETE } from "../../ActionTypes";
 
 let initialState = {
     todo_items : {}
@@ -28,6 +28,15 @@ export default function (state=initialState, action) {
                 }
             }
         };
+        case DELETE : {
+                delete state.todo_items[id];
+                return {
+                ...state,
+                todo_items : {
+                    ...state.todo_items    
+                }
+            };
+        }
         default  : return state;
     }
 }
