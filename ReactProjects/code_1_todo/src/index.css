@@ -41,6 +41,11 @@
     text-align: left;
 }
 
+.todo-item .deleteSpan {
+    position: fixed;
+    padding-left: 650px;
+}
+
 .emoji {
     font-size: 40px;
 }

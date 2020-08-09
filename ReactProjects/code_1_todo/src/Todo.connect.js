@@ -1,4 +1,4 @@
-import { addTodo, filter, toggle } from "./Redux/Actions";
+import { addTodo, filter, toggle, deleteTodo } from "./Redux/Actions";
 import { getFilteredValues } from "./Redux/todoSelector";
 
 export const mapStateToProps = (state) => {
@@ -22,6 +22,10 @@ export const mapDispatchToProps = (dispatch) => {
 
         toggle : (id) => {
             dispatch(toggle(id));
+        },
+
+        deleteTodo: (id) => {
+            dispatch(deleteTodo(id));
         }
     }
 };

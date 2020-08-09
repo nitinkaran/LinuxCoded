@@ -1,4 +1,4 @@
-import { ADD, TOGGLE, FILTER } from '../ActionTypes';
+import { ADD, TOGGLE, FILTER, DELETE } from '../ActionTypes';
 
 let currentId = 1;
 
@@ -26,6 +26,15 @@ export const filter = (filterType) => {
         type : FILTER,
         payload : {
             filterType
+        }
+    }
+};
+
+export const deleteTodo = (id) => {   
+    return {
+        type : DELETE,
+        payload : {
+            id
         }
     }
 };

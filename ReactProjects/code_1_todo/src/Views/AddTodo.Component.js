@@ -13,6 +13,9 @@ export default class AddTodoComponent extends Component {
     }
 
     handleClick() {
+        if (this.state.message === ''){
+            return;
+        }
         this.props.addTodo(this.state.message);
         this.setState({
             message: ''

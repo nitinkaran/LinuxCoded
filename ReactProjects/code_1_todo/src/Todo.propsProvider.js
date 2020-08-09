@@ -28,9 +28,10 @@ export default class PropsProvider {
     }
 
     getTodoProps(props) {
-        const { toggle } = props;
+        const { toggle, deleteTodo } = props;
         return {
-            toggle
+            toggle,
+            deleteTodo
         }
     }
 
