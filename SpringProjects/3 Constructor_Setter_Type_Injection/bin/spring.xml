@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="triangle" class="org.karan.nagendra.Triangle">
+		<property name="type" value="Equilateral" /> 
+	</bean>
+		
+	<bean id="quadrilateral" class="org.karan.nagendra.Quadrilateral">
+		<constructor-arg value="Rectangle" />
+	</bean>
+	 
+	 
+	<bean id="quad1" class="org.karan.nagendra.Quadrilateral">
+		<constructor-arg value="Rectangle" />
+		<constructor-arg value="10" />
+		<constructor-arg value="20" />
+	</bean>
+	
+	<bean id="quad2" class="org.karan.nagendra.Quadrilateral">
+		<constructor-arg value="10" />
+		<constructor-arg value="20" />
+	</bean>
+
+</beans>
