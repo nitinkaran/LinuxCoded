@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="triangle" class="org.karan.nagendra.Triangle">
+		<property name="pointA" ref="pointA" />
+		<property name="pointB" ref="pointB" />
+		<property name="pointC" ref="pointC" />
+	</bean>
+	
+	<bean id="pointA" class="org.karan.nagendra.Point">
+		<property name="x" value="1" />
+		<property name="y" value="-4" />
+	</bean>
+	
+	<bean id="pointB" class="org.karan.nagendra.Point">
+		<property name="x" value="-20" />
+		<property name="y" value="0" />
+	</bean>
+	
+	<bean id="pointC" class="org.karan.nagendra.Point">
+		<property name="x" value="6" />
+		<property name="y" value="4" />
+	</bean>
+	
+	<bean id="circle" class="org.karan.nagendra.Circle">
+		<property name="center" ref="center" />
+	</bean>
+	
+	<bean id="center" class="org.karan.nagendra.Point">
+		<property name="x" value="${center.pointX}" />
+		<property name="y" value="${center.pointX}" />
+	</bean>
+	
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="CircleConfig.properties" />
+	</bean>
+
+</beans>
