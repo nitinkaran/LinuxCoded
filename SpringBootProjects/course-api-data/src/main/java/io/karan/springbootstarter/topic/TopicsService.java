@@ -3,6 +3,7 @@ package io.karan.springbootstarter.topic;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,9 +47,13 @@ public class TopicsService {
 	}
 	
 	
-	public Topic getTopic(String id) {
-		Topic value = topics.stream().filter(t -> t.getId().equals(id)).findFirst().get();
-		return value;
+	/*
+	 * The Crud Repository has a method findById which find the topic given with the id.
+	 */
+	public Optional<Topic> getTopic(String id) {
+//		Topic value = topics.stream().filter(t -> t.getId().equals(id)).findFirst().get();
+//		return value;
+		return topicRepository.findById(id);
 	}
 
 	
@@ -62,17 +67,28 @@ public class TopicsService {
 	}
 
 	
-	
+	/*
+	 * CrudRepository does not have any method for update, but we have save method which can perform the same task. All it takes is the topic and not the Id
+	 * bcz database already have the tuple corresponding to that id. It first checks whether the entry for that id exists or not. If it exists then it takes
+	 * the topic and then update that entity
+	 */
 	public void updateTopic(Topic topic, String id) {
-		for(int i=0; i<topics.size(); i++) {
-			if (topics.get(i).getId().equals(id)) {
-				topics.set(i, topic);
-				return;
-			}
-		}
+		
+//		for(int i=0; i<topics.size(); i++) {
+//			if (topics.get(i).getId().equals(id)) {
+//				topics.set(i, topic);
+//				return;
+//			}
+//		}
+		topicRepository.save(topic);
+	
 	}
 
+	/*
+	 * Crud provides a method deleteById which takes the id parameter of the topic topic and then delete that specific topic
+	 */
 	public void deleteTopic(String id) {
-		topics.removeIf(item -> item.getId().equals(id));
+		topicRepository.deleteById(id);
+//		topics.removeIf(item -> item.getId().equals(id));
 	}
 }
