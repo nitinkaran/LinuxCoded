@@ -37,11 +37,11 @@ public class TopicsService {
 	public List<Topic> getAllTopics() {
 		
 		List<Topic> topics = new ArrayList<>();
-		topicRepository.findAll()
-		.forEach(item -> {topics.add(item);});
-		
 //		topicRepository.findAll()
-//		.forEach(topics :: add);
+//		.forEach(item -> {topics.add(item);});
+		
+		topicRepository.findAll()
+		.forEach(topics :: add);
 		
 		return topics;
 	}
