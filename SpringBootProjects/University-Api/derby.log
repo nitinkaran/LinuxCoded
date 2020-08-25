@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Aug 25 20:26:43 IST 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0174-261f-0708-000002d08800 
+on database directory memory:/media/nagendra/Nagendra/github/STS_Workspace/University-Api/022b1e48-b09c-407e-8840-5105a4be41fd with class loader sun.misc.Launcher$AppClassLoader@75b84c92 
+Loaded from file:/home/nagendra/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Private Build
+java.runtime.version=1.8.0_265-8u265-b01-0ubuntu2~20.04-b01
+user.dir=/media/nagendra/Nagendra/github/STS_Workspace/University-Api
+os.name=Linux
+os.arch=amd64
+os.version=5.4.0-42-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
