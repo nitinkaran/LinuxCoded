@@ -14,7 +14,6 @@ public class InstructorService {
 
 	@Autowired
 	private InstructorRepository instructorRepository;
-	private List<Instructor> instructorList = new ArrayList<Instructor>();
 	
 	public List<Instructor> getAllInstructor() {
 		List<Instructor> list = new ArrayList<>();
@@ -33,25 +32,12 @@ public class InstructorService {
 		instructorRepository.save(dept);
 	}
 
-//	public List<String> getFilteredDepartment(String filter) {
-//		List<String> list = new ArrayList<>();
-//		
-//		switch (filter) {
-//		case "deptName":
-//			
-//			departmentRepository.findAll()
-//			.forEach(item -> {
-//				list.add(item.getDeptName());
-//			});
-//			
-//			break;
-//
-//		default:
-//			list = null;
-//			break;
-//		}
-//		
-//		return list;
-//	}
+	public void updateInstructorDetails(Instructor instructor) {
+		instructorRepository.save(instructor);
+	}
+
+	public void deleteInstructorDetail(String instructorId) {
+		instructorRepository.deleteById(instructorId);
+	}
 
 }

@@ -10,32 +10,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.karan.student.Student;
+
 @RestController
 public class DepartmentController {
 
 	@Autowired
 	private DepartmentService departmentService;
 	
-	@RequestMapping("/departments")
+	@RequestMapping("/department")
 	public List<Department> getAllDepartments() {
 		return departmentService.getAllDepartments();
 	}
 	
-	@RequestMapping("/departments/{name}")
+	@RequestMapping("/department/{name}")
 	public Optional<Department> getDepartmentByName(@PathVariable String name) {
 		return departmentService.getDepartmentByName(name);
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/departments")
+	@RequestMapping(method = RequestMethod.POST, value = "/department")
 	public void addDepartment(@RequestBody Department dept ) {
 		departmentService.addDepartment(dept);
 	}
+
+	@RequestMapping(method = RequestMethod.PUT, value = "/department/{deptName}")
+	public void updateDepartmentDetails(@RequestBody Department department) {
+		departmentService.updateDepartmentDetails(department);
+	}
 	
-//	@RequestMapping(method = RequestMethod.GET, value = "/departments/{filter}")
-//	public List<String> getFilteredDepartment(@PathVariable String filter) {
-//		departmentService.getFilteredDepartment(filter);
-//		return null;
-//		
-//	}
+	@RequestMapping(method = RequestMethod.DELETE, value = "/department/{deptName}")
+	public void deleteDepartmentDetail(@PathVariable String deptName) {
+		departmentService.deleteDepartmentDetail(deptName);
+	}
 	
 }

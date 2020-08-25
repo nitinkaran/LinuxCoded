@@ -32,4 +32,12 @@ public class CourseService {
 		courseRepository.save(course);
 	}
 
+	public void updateCourse(Course course) {
+		courseRepository.save(course);
+	}
+
+	public void deleteCourse(String courseId) {
+		courseRepository.deleteById(courseId);
+	}
+
 }

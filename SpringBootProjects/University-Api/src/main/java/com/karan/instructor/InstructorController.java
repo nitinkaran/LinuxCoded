@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.karan.department.Department;
+
 @RestController
 public class InstructorController {
 
@@ -31,11 +33,14 @@ public class InstructorController {
 		instructorService.addInstructor(dept);
 	}
 	
-//	@RequestMapping(method = RequestMethod.GET, value = "/departments/{filter}")
-//	public List<String> getFilteredDepartment(@PathVariable String filter) {
-//		departmentService.getFilteredDepartment(filter);
-//		return null;
-//		
-//	}
+	@RequestMapping(method = RequestMethod.PUT, value = "/instructor")
+	public void updateInstructorDetails(@RequestBody Instructor instructor) {
+		instructorService.updateInstructorDetails(instructor);
+	}
+	
+	@RequestMapping(method = RequestMethod.DELETE, value = "/instructor/{instructorId}")
+	public void deleteInstructorDetail(@PathVariable String instructorId) {
+		instructorService.deleteInstructorDetail(instructorId);
+	}
 	
 }

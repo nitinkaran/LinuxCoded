@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.karan.course.Course;
+
 @RestController
 public class StudentController {
 
@@ -30,12 +32,15 @@ public class StudentController {
 	public void addStudent(@RequestBody Student student ) {
 		studentService.addStudent(student);
 	}
+
+	@RequestMapping(method = RequestMethod.PUT, value = "/student/{studentId}")
+	public void updateStudentDetails(@RequestBody Student student) {
+		studentService.updateStudentDetails(student);
+	}
 	
-//	@RequestMapping(method = RequestMethod.GET, value = "/departments/{filter}")
-//	public List<String> getFilteredDepartment(@PathVariable String filter) {
-//		departmentService.getFilteredDepartment(filter);
-//		return null;
-//		
-//	}
+	@RequestMapping(method = RequestMethod.DELETE, value = "/student/{studentId}")
+	public void deleteStudentDetail(@PathVariable String studentId) {
+		studentService.deleteStudentDetail(studentId);
+	}
 	
 }

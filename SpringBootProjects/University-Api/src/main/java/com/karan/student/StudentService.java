@@ -32,25 +32,12 @@ public class StudentService {
 		studentRepository.save(student);
 	}
 
-//	public List<String> getFilteredDepartment(String filter) {
-//		List<String> list = new ArrayList<>();
-//		
-//		switch (filter) {
-//		case "deptName":
-//			
-//			departmentRepository.findAll()
-//			.forEach(item -> {
-//				list.add(item.getDeptName());
-//			});
-//			
-//			break;
-//
-//		default:
-//			list = null;
-//			break;
-//		}
-//		
-//		return list;
-//	}
+	public void updateStudentDetails(Student student) {
+		studentRepository.save(student);
+	}
+
+	public void deleteStudentDetail(String studentId) {
+		studentRepository.deleteById(studentId);
+	}
 
 }
