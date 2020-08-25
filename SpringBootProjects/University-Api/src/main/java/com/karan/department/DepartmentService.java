@@ -33,25 +33,12 @@ public class DepartmentService {
 		departmentRepository.save(dept);
 	}
 
-//	public List<String> getFilteredDepartment(String filter) {
-//		List<String> list = new ArrayList<>();
-//		
-//		switch (filter) {
-//		case "deptName":
-//			
-//			departmentRepository.findAll()
-//			.forEach(item -> {
-//				list.add(item.getDeptName());
-//			});
-//			
-//			break;
-//
-//		default:
-//			list = null;
-//			break;
-//		}
-//		
-//		return list;
-//	}
+	public void updateDepartmentDetails(Department department) {
+		departmentRepository.save(department);
+	}
+
+	public void deleteDepartmentDetail(String deptName) {
+		departmentRepository.deleteById(deptName);
+	}
 
 }
