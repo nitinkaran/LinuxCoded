@@ -40,4 +40,8 @@ public class StudentService {
 		studentRepository.deleteById(studentId);
 	}
 
+	public List<Student> getStudentOfDepartment(String deptName) {
+		return studentRepository.findByDepartmentDeptName(deptName);
+	}
+
 }

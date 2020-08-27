@@ -40,4 +40,12 @@ public class CourseService {
 		courseRepository.deleteById(courseId);
 	}
 
+	public void addCourseTaughtByInstructorOfferedByDepartment(Course course) {
+		courseRepository.save(course);
+	}
+
+	public List<Course> getCourseTaughtByInstructor(String instructorId, String deptName) {
+		return courseRepository.findByInstructorInstructorIdAndDepartmentDeptName(instructorId, deptName);
+	}
+
 }

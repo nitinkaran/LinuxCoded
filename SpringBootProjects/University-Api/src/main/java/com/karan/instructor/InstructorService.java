@@ -40,4 +40,8 @@ public class InstructorService {
 		instructorRepository.deleteById(instructorId);
 	}
 
+	public List<Instructor> getInstructorInDepartment(String deptName) {
+		return instructorRepository.findByDepartmentDeptName(deptName);
+	}
+
 }

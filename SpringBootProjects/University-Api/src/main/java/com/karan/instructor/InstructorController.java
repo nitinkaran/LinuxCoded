@@ -28,11 +28,6 @@ public class InstructorController {
 		return instructorService.getInstructorByName(name);
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/instructor")
-	public void addInstructor(@RequestBody Instructor dept ) {
-		instructorService.addInstructor(dept);
-	}
-	
 	@RequestMapping(method = RequestMethod.PUT, value = "/instructor")
 	public void updateInstructorDetails(@RequestBody Instructor instructor) {
 		instructorService.updateInstructorDetails(instructor);
@@ -41,6 +36,25 @@ public class InstructorController {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/instructor/{instructorId}")
 	public void deleteInstructorDetail(@PathVariable String instructorId) {
 		instructorService.deleteInstructorDetail(instructorId);
+	}
+	
+	
+	/*
+	 * Instructor must be created when the department exist otherwise it must fail with 404 error with the user defined error message to be displayed.
+	 * THE ERROR MESSAGE IS CURRENTLY EMPTY AND NEED TO BE HANDLED 
+	 */
+	@RequestMapping(method = RequestMethod.POST, value = "/instructor/{deptName}/department")
+	public void instructorAndDepartment(@RequestBody Instructor instructor, @PathVariable String deptName) {
+		instructor.setDepartment(new Department(deptName, "", ""));
+		instructorService.addInstructor(instructor);
+	}
+	
+	/*
+	 * Retreive the instructors based on their departments in which they are working.
+	 */
+	@RequestMapping(method = RequestMethod.GET, value = "/instructor/{deptName}")
+	public List<Instructor> getInstructorInDepartment(@PathVariable String deptName) {
+		return instructorService.getInstructorInDepartment(deptName);
 	}
 	
 }

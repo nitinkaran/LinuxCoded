@@ -33,7 +33,7 @@ public class DepartmentController {
 		departmentService.addDepartment(dept);
 	}
 
-	@RequestMapping(method = RequestMethod.PUT, value = "/department/{deptName}")
+	@RequestMapping(method = RequestMethod.PUT, value = "/department")
 	public void updateDepartmentDetails(@RequestBody Department department) {
 		departmentService.updateDepartmentDetails(department);
 	}

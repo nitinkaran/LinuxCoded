@@ -11,7 +11,6 @@ public class Department {
 	private String deptBuilding;
 	private String deptBudget;
 	
-	
 	public Department() {
 		super();
 	}
