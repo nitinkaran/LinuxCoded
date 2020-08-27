@@ -2,6 +2,10 @@ package com.karan.course;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import com.karan.department.Department;
+import com.karan.instructor.Instructor;
 
 @Entity
 public class Course {
@@ -11,9 +15,17 @@ public class Course {
 	private String courseName;
 	private int courseCredit;
 	
+	@ManyToOne
+	private Instructor instructor;
+	
+	@ManyToOne
+	private Department department;
+	
 	public Course() {
 		super();
 	}
+
+	
 
 	public Course(String courseId, String courseName, int courseCredit) {
 		super();
@@ -21,6 +33,8 @@ public class Course {
 		this.courseName = courseName;
 		this.courseCredit = courseCredit;
 	}
+
+
 
 	public String getCourseId() {
 		return courseId;
@@ -44,6 +58,22 @@ public class Course {
 
 	public void setCourseCredit(int courseCredit) {
 		this.courseCredit = courseCredit;
+	}
+
+	public Instructor getInstructor() {
+		return instructor;
+	}
+
+	public void setInstructor(Instructor instructor) {
+		this.instructor = instructor;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 
 	

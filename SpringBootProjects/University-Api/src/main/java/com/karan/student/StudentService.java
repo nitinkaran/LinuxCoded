@@ -40,4 +40,18 @@ public class StudentService {
 		studentRepository.deleteById(studentId);
 	}
 
+	public List<Student> getStudentOfDepartment(String deptName) {
+		return studentRepository.findByStudentDepartmentDeptName(deptName);
+	}
+
+	public void addAdvisorOfStudent(Student student) {
+		studentRepository.save(student);
+	}
+
+	public List<Student> getStudentAdvisedByInstructor(String instructorId) {
+		return studentRepository.findByStudentInstructorInstructorId(instructorId);
+	}
+
+
+
 }
