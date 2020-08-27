@@ -41,7 +41,17 @@ public class StudentService {
 	}
 
 	public List<Student> getStudentOfDepartment(String deptName) {
-		return studentRepository.findByDepartmentDeptName(deptName);
+		return studentRepository.findByStudentDepartmentDeptName(deptName);
 	}
+
+	public void addAdvisorOfStudent(Student student) {
+		studentRepository.save(student);
+	}
+
+	public List<Student> getStudentAdvisedByInstructor(String instructorId) {
+		return studentRepository.findByStudentInstructorInstructorId(instructorId);
+	}
+
+
 
 }

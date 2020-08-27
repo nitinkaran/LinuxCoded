@@ -6,6 +6,16 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface StudentRepository extends CrudRepository<Student, String> {
 
-	public List<Student> findByDepartmentDeptName(String deptName);
-
+	/*
+	 * Find the list of student related to a departemnt
+	 */
+	public List<Student> findByStudentDepartmentDeptName(String deptName);
+	
+	
+	/*
+	 * Find the list of students who are advised by an Instructor
+	 */
+	public List<Student> findByStudentInstructorInstructorId(String instructorId);
+	
+	
 }

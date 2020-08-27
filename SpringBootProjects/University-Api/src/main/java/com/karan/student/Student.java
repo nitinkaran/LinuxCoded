@@ -5,6 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import com.karan.department.Department;
+import com.karan.instructor.Instructor;
 
 @Entity
 public class Student {
@@ -15,7 +16,10 @@ public class Student {
 	private int studentCredit;
 	
 	@ManyToOne
-	private Department department;
+	private Department studentDepartment;
+	
+	@ManyToOne
+	private Instructor studentInstructor;
 	
 	public Student() {
 		super();
@@ -54,12 +58,20 @@ public class Student {
 		this.studentCredit = studentCredit;
 	}
 
-	public Department getDepartment() {
-		return department;
+	public Department getStudentDepartment() {
+		return studentDepartment;
 	}
 
-	public void setDepartment(Department department) {
-		this.department = department;
+	public void setStudentDepartment(Department studentDepartment) {
+		this.studentDepartment = studentDepartment;
+	}
+
+	public Instructor getStudentInstructor() {
+		return studentInstructor;
+	}
+
+	public void setStudentInstructor(Instructor studentInstructor) {
+		this.studentInstructor = studentInstructor;
 	}
  
 	
