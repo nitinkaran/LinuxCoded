@@ -22,4 +22,18 @@ public class ProductService {
 		return productRepository.findAll();
 	}
 
+	public List<Product> retrieveProductListByProductGroupType(String type) {
+		return productRepository.findByProductGroupProductGroupType(type);
+	}
+
+	// Removes all the products which has been added till now
+	public void removeAllProducts() {
+		productRepository.deleteAll();
+	}
+
+	// Removes only filtered products based on the type of ProductGroup Type
+	public void removeFilteredProducts(String type) {
+		productRepository.deleteAll(productRepository.findByProductGroupProductGroupType(type));
+	}
+
 }
