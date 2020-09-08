@@ -1,6 +1,7 @@
 package com.karan.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,6 +28,11 @@ public class ProductController {
 	@GetMapping(value = "/product")
 	public List<Product> retrieveProductList() {
 		return productService.retrieveProductList();
+	}
+	
+	@GetMapping(value = "/product/{productId}")
+	public Optional<Product> retrieveProductById(@PathVariable String productId) {
+		return productService.retrieveProductById(productId);
 	}
 	
 	@GetMapping(value = "/product/product-group/{type}")

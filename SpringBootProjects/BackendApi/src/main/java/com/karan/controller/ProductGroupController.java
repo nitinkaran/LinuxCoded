@@ -34,6 +34,13 @@ public class ProductGroupController {
 		return productGroupService.retrieveProductGroupByType(type);
 	}
 	
+	/*
+	 * Removes all the product groups and its related products
+	 */
+	@DeleteMapping(value = "/product-group")
+	public void removeAllProductGroup() {
+		productGroupService.removeAllProductGroup();
+	}
 	
 	/*
 	 * Remove a product group and all its related products 
