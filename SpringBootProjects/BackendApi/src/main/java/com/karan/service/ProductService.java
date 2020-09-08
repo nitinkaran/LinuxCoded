@@ -1,6 +1,7 @@
 package com.karan.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,10 @@ public class ProductService {
 	// Removes only filtered products based on the type of ProductGroup Type
 	public void removeFilteredProducts(String type) {
 		productRepository.deleteAll(productRepository.findByProductGroupProductGroupType(type));
+	}
+
+	public Optional<Product> retrieveProductById(String productId) {
+		return productRepository.findById(Integer.valueOf(productId));
 	}
 
 }
