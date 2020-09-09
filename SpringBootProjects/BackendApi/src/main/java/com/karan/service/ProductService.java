@@ -2,6 +2,7 @@ package com.karan.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,10 @@ public class ProductService {
 	ProductRepository productRepository;
 
 	public void createProduct(List<Product> products) {
-		products.forEach(item -> productRepository.save(item));
+		products.forEach(product -> {
+			product.setProductId(String.valueOf(ThreadLocalRandom.current().nextInt(1001, 99999)).concat("A"));
+			productRepository.save(product);
+		});
 	}
 	
 	public List<Product> retrieveProductList() {
@@ -38,7 +42,7 @@ public class ProductService {
 	}
 
 	public Optional<Product> retrieveProductById(String productId) {
-		return productRepository.findById(Integer.valueOf(productId));
+		return productRepository.findById(productId);
 	}
 
 }
