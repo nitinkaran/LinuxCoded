@@ -5,88 +5,63 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.GeneratorType;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "ShoppingCart")
 public class ShoppingCart {
 
-//	@Id
-//	@Column(name = "shoppingCartId")
-//	private String shoppingCartId;
-//	private double shoppingCartTotalPrice;
-//	
-//	@OneToMany
-//	private List<CartItem> cartItemList;
-//	
-//	public ShoppingCart() {
-//		super();
-//	}
-//	
-//	public ShoppingCart(String shoppingCartId, double shoppingCartTotalPrice) {
-//		super();
-//		this.shoppingCartId = shoppingCartId;
-//		this.shoppingCartTotalPrice = shoppingCartTotalPrice;
-//	}
-//
-//	public String getShoppingCartId() {
-//		return shoppingCartId;
-//	}
-//
-//	public void setShoppingCartId(String shoppingCartId) {
-//		this.shoppingCartId = String.valueOf(ThreadLocalRandom.current().nextInt(1001, 99999)).concat("A");
-//	}
-//
-//	public double getShoppingCartTotalPrice() {
-//		return shoppingCartTotalPrice;
-//	}
-//
-//	public void setShoppingCartTotalPrice(double shoppingCartTotalPrice) {
-//		this.shoppingCartTotalPrice = shoppingCartTotalPrice;
-//	}
-//
-//	public List<CartItem> getCartItemList() {
-//		return cartItemList;
-//	}
-//
-//	public void setCartItemList(List<CartItem> cartItemList) {
-//		this.cartItemList = cartItemList;
-//	}
-	
-	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	private String Name;
-
+	@Column(name = "shoppingCartId")
+	private String shoppingCartId;
+	private double shoppingCartTotalPrice;
+	
+	@OneToMany
+	@JsonIgnoreProperties
+	private List<CartItem> cartItemList;
+	
 	public ShoppingCart() {
 		super();
 	}
 	
-	public ShoppingCart(Long id, String name) {
+	public ShoppingCart(String shoppingCartId, double shoppingCartTotalPrice) {
 		super();
-		this.id = id;
-		Name = name;
+		this.shoppingCartId = shoppingCartId;
+		this.shoppingCartTotalPrice = shoppingCartTotalPrice;
 	}
-	
-	public Long getId() {
-		return id;
+
+	public String getShoppingCartId() {
+		return shoppingCartId;
 	}
-	public void setId(Long id) {
-		this.id = id;
+
+	public void setShoppingCartId(String shoppingCartId) {
+		this.shoppingCartId = shoppingCartId;
 	}
-	public String getName() {
-		return Name;
+
+	public double getShoppingCartTotalPrice() {
+		return shoppingCartTotalPrice;
 	}
-	public void setName(String name) {
-		Name = name;
+
+	public void setShoppingCartTotalPrice(double shoppingCartTotalPrice) {
+		this.shoppingCartTotalPrice = shoppingCartTotalPrice;
 	}
-	
+
+	public List<CartItem> getCartItemList() {
+		return cartItemList;
+	}
+
+	public void setCartItemList(List<CartItem> cartItemList) {
+		this.cartItemList = cartItemList;
+	}
+
+	@Override
+	public String toString() {
+		return "ShoppingCart [shoppingCartId=" + shoppingCartId + ", shoppingCartTotalPrice=" + shoppingCartTotalPrice
+				+ ", cartItemList=" + cartItemList + "]";
+	}
 	
 }

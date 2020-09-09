@@ -26,8 +26,7 @@ public class Product implements Serializable{
 	@Id
 	@Column(name = "productId")
 	@NonNull
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int productId;
+	private String productId;
 	private String productType;
 	private String productName;
 	private String productDescription;
@@ -41,10 +40,10 @@ public class Product implements Serializable{
 	@JsonIgnoreProperties
 	ProductGroup productGroup;
 	
-	public int getProductId() {
+	public String getProductId() {
 		return productId;
 	}
-	public void setProductId(int productId) {
+	public void setProductId(String productId) {
 		this.productId = productId;
 	}
 	public String getProductType() {
@@ -90,6 +89,7 @@ public class Product implements Serializable{
 				+ ", productDescription=" + productDescription + ", productPrice=" + productPrice + ", productImage="
 				+ productImage + ", productGroup=" + productGroup + "]";
 	}
+	
 	
 	
 }
