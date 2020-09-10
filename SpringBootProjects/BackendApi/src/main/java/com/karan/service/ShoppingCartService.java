@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.karan.models.CartItem;
 import com.karan.models.ShoppingCart;
+import com.karan.repository.CartItemRepository;
 import com.karan.repository.ShoppingCartRepository;
 
 @Service
@@ -17,6 +18,9 @@ public class ShoppingCartService {
 
 	@Autowired
 	private ShoppingCartRepository shoppingCartRepository;
+	
+	@Autowired
+	private CartItemRepository cartItemRepository;
 	
 	ShoppingCart shoppingCart;
 
@@ -56,14 +60,16 @@ public class ShoppingCartService {
 		shoppingCartRepository.save(cart);
 	}
 
-	
-	
-	////NEED TO IMPLEMENT THE METHODS BELOW
-	
-
 	public void deleteCartItemFromCart(String cartId, String cartItemId) {
-		// TODO Auto-generated method stub
-		//NEED TO IMPLEMENT THIS METHOD
+		Optional<ShoppingCart> cart = shoppingCartRepository.findById(cartId);
+		ShoppingCart shoppingCart = cart.get();
+		for(CartItem cartItem : shoppingCart.getCartItemList()) {
+			if (cartItem.getCartItemId().equals(cartItemId)) {
+				shoppingCart.getCartItemList().remove(cartItem);
+				cartItemRepository.deleteById(cartItemId);
+			}
+		}
+		shoppingCartRepository.save(shoppingCart);
 	}
 
 }

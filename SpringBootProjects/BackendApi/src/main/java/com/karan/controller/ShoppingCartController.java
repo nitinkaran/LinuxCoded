@@ -41,9 +41,9 @@ public class ShoppingCartController {
 		shoppingCartService.deleteCart(cartId);
 	}
 	
-	// To Be implemented
+	// To Be implemented, ITS NOT WORKING
 	@DeleteMapping("/cart/{cartId}/cartItem/{cartItemId}")
-	public void deleteCartItemFromCart(@PathVariable String cartId, String cartItemId) {
+	public void deleteCartItemFromCart(@PathVariable String cartId, @PathVariable String cartItemId) {
 		shoppingCartService.deleteCartItemFromCart(cartId, cartItemId);
 	}
 	

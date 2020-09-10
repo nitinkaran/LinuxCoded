@@ -1,5 +1,6 @@
 package com.karan.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +35,10 @@ public class CartItemController {
 	@DeleteMapping(value = "/cartItem/{cartItemId}")
 	public void removeCartItem(@PathVariable String cartItemId) {
 		cartItemService.removeCartItem(cartItemId);
+	}
+	
+	@GetMapping(value = "/cartItems")
+	public List<CartItem> retrieveAllCartItems() {
+		return cartItemService.retrieveAllCartItems();
 	}
 }

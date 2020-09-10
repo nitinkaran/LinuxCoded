@@ -1,7 +1,6 @@
 package com.karan.models;
 
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
