@@ -1,5 +1,6 @@
 package com.karan.service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -32,6 +33,10 @@ public class CartItemService {
 
 	public void removeCartItem(String cartItemId) {
 		cartItemRepository.deleteById(cartItemId);
+	}
+
+	public List<CartItem> retrieveAllCartItems() {
+		return cartItemRepository.findAll();
 	}
 
 }

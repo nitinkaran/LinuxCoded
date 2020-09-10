@@ -4,10 +4,16 @@ package com.karan.models;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.lang.NonNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "CartItem")
@@ -22,8 +28,9 @@ public class CartItem {
 	private String cartItemAttachment;
 	
 	@OneToOne
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	private Product product;
-
+	
 	public String getCartItemId() {
 		return cartItemId;
 	}
@@ -67,7 +74,8 @@ public class CartItem {
 	@Override
 	public String toString() {
 		return "CartItem [cartItemId=" + cartItemId + ", cartItemType=" + cartItemType + ", cartItemPrice="
-				+ cartItemPrice + ", cartItemAttachment=" + cartItemAttachment +"]";
+				+ cartItemPrice + ", cartItemAttachment=" + cartItemAttachment + ", product=" + product + "]";
 	}
-	
+
+
 }
