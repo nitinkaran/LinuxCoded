@@ -23,6 +23,9 @@ public class ShoppingCartService {
 	private CartItemRepository cartItemRepository;
 	
 	ShoppingCart shoppingCart;
+	
+	
+	
 
 	public ShoppingCart createCart(CartItem cartItem) {
 		List<CartItem> list = new ArrayList<>();
@@ -31,7 +34,9 @@ public class ShoppingCartService {
 			return null;
 		}
 		list.add(cartItem);
+		
 		shoppingCart.setShoppingCartId(String.valueOf(ThreadLocalRandom.current().nextInt(1001, 99999)).concat("A"));
+		shoppingCart.setShoppingCartStatus("ACTIVE");
 		shoppingCart.setShoppingCartTotalPrice(cartItem.getCartItemPrice());
 		shoppingCart.setCartItemList(list);
 		return shoppingCartRepository.save(shoppingCart);
@@ -70,6 +75,13 @@ public class ShoppingCartService {
 			}
 		}
 		shoppingCartRepository.save(shoppingCart);
+	}
+
+	public ShoppingCart checkout(String cartId) {
+		Optional<ShoppingCart> cart = shoppingCartRepository.findById(cartId);
+		cart.get().setShoppingCartStatus("SUBMITTED");
+		shoppingCartRepository.save(cart.get());
+		return cart.get();
 	}
 
 }

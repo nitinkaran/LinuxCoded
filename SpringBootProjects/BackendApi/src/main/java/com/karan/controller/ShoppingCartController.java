@@ -20,12 +20,12 @@ public class ShoppingCartController {
 	@Autowired
 	private ShoppingCartService shoppingCartService;
 	
+	
 	@PostMapping(value = "/cart")
 	public ShoppingCart createCart(@RequestBody CartItem cartItem) {
 		return shoppingCartService.createCart(cartItem);
 	}
 	
-	// To Be implemented
 	@PostMapping("/cart/{cartId}")
 	public void addAnotherCartItemToShoppingCart(@PathVariable String cartId, @RequestBody CartItem cartItem) {
 		shoppingCartService.addAnotherCartItemToShoppingCart(cartId, cartItem);
@@ -41,10 +41,14 @@ public class ShoppingCartController {
 		shoppingCartService.deleteCart(cartId);
 	}
 	
-	// To Be implemented, ITS NOT WORKING
 	@DeleteMapping("/cart/{cartId}/cartItem/{cartItemId}")
 	public void deleteCartItemFromCart(@PathVariable String cartId, @PathVariable String cartItemId) {
 		shoppingCartService.deleteCartItemFromCart(cartId, cartItemId);
+	}
+	
+	@PostMapping("/checkout/{cartId}")
+	public ShoppingCart checkout(@PathVariable String cartId) {
+		return shoppingCartService.checkout(cartId);
 	}
 	
 }

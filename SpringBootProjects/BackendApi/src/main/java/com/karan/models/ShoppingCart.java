@@ -17,6 +17,7 @@ public class ShoppingCart {
 	@Id
 	@Column(name = "shoppingCartId")
 	private String shoppingCartId;
+	private String shoppingCartStatus;
 	private double shoppingCartTotalPrice;
 	
 	@OneToMany
@@ -27,9 +28,10 @@ public class ShoppingCart {
 		super();
 	}
 	
-	public ShoppingCart(String shoppingCartId, double shoppingCartTotalPrice) {
+	public ShoppingCart(String shoppingCartId, double shoppingCartTotalPrice, String shoppingCartStatus) {
 		super();
 		this.shoppingCartId = shoppingCartId;
+		this.shoppingCartStatus = shoppingCartStatus;
 		this.shoppingCartTotalPrice = shoppingCartTotalPrice;
 	}
 
@@ -41,6 +43,14 @@ public class ShoppingCart {
 		this.shoppingCartId = shoppingCartId;
 	}
 
+	public String getShoppingCartStatus() {
+		return shoppingCartStatus;
+	}
+
+	public void setShoppingCartStatus(String shoppingCartStatus) {
+		this.shoppingCartStatus = shoppingCartStatus;
+	}
+	
 	public double getShoppingCartTotalPrice() {
 		return shoppingCartTotalPrice;
 	}
@@ -62,5 +72,5 @@ public class ShoppingCart {
 		return "ShoppingCart [shoppingCartId=" + shoppingCartId + ", shoppingCartTotalPrice=" + shoppingCartTotalPrice
 				+ ", cartItemList=" + cartItemList + "]";
 	}
-	
+
 }
