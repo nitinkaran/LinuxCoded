@@ -1,0 +1,22 @@
+[
+    {
+        "productGroupType": "BOOKS",
+        "productGroupName": "BOOKS_TO_READ"
+    },
+    {
+        "productGroupType": "CLOTHS",
+        "productGroupName": "CLOTHS_FOR_PUBLIC"
+    },
+    {
+        "productGroupType": "TOOLS",
+        "productGroupName": "TOOLS_FOR_COMPANIES"
+    },
+    {
+        "productGroupType": "COMPUTER",
+        "productGroupName": "COMPUTER_FOR_USERS"
+    },
+    {
+        "productGroupType": "FURNITURE",
+        "productGroupName": "FURNITURE_1234"
+    }
+]

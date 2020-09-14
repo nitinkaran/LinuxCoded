@@ -1,0 +1,44 @@
+[
+	{
+        "productType": "BOOKS",
+        "productPrice": 259.0,
+        "productName": "Who painted my money white",
+        "productDescription": "Corruption charges on MP's and how they tossed the government to steal people's money",
+        "productImage": "The image is on the way to be added just looking for storage methods"
+    },
+    {
+        "productType": "FURNITURE",
+        "productPrice": 5399.0, 
+        "productName": "CHAR",
+        "productDescription": "A NEELKAMAL product for the normal usage in the house",
+        "productImage": "Model shoots are going on ...... your wait will be over in few days"
+    },
+    {
+        "productType": "BOOKS",
+        "productPrice": 759.0,
+        "productName": "The IMMORTALS OF KING DYNASTY",
+        "productDescription": "A fairy tale of king dynasty",
+        "productImage": "The image is on the way to be added just looking for storage methods"
+    },
+    {
+        "productType": "CLOTHS",
+        "productPrice": 599.0, 
+        "productName": "TROUSER",
+        "productDescription": "A Sleek trouser of your choice now available at your doorstep",
+        "productImage": "Model shoots are going on ...... your wait will be over in few days"
+    },
+    {
+        "productType": "COMPUTER",
+        "productPrice": 599.0,
+        "productName": "COMP",
+        "productDescription": "A new designed sleek laptop for comfortable usage",
+        "productImage": "We are covering the specifications of the product. It will be released today"
+    },
+    {
+        "productType": "TOOLS",
+        "productPrice": 899.0,
+        "productName": "Hammer",
+        "productDescription": "A Taparia product",
+        "productImage": "We have you got your wish.....we are on the way to deliver it to you"
+    }
+]
