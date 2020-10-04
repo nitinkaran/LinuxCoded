@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import productGroupActions from './productGroupActions';
-import productsActions from './productsActions'
+import productGroup from './productGroupActions';
+import products from './productsActions'
 
 export default combineReducers({
-    productGroupActions,
-    productsActions
+    productGroup,
+    products
 });

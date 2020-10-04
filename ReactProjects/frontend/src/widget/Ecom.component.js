@@ -1,31 +1,39 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import propsProvider from "./Ecom.propsProvider";
+import { mapDispatchToProps, mapStateToProps } from './Ecom.connect';
 import FrontApi from '../Api/FrontendApi';
 // import MainView from './templates/Ecom.MainView';
 
-export default class EcommerceComponent extends Component {
+class EcommerceComponent extends Component {
 
     constructor(props) {
         super(props);
+        this.propsProvider = new propsProvider(this.props);
         this.state = {
             productGroup : {},
             products: {}
         };
-    } getUrl
+    }
 
-    componentDidMount() {        
+    componentDidMount() {
+        const {getProductGroup, getProducts} = this.props;
         FrontApi.getProductCategories()
         .then((response) => {
-            FrontApi.getProducts()
-            .then((res) => {                
-                this.setState({productGroup: response.data, products: res.data});
-            });
+            getProductGroup(response.data);
+            this.setState({productGroup : response.data});
+        });
+
+        FrontApi.getProducts()
+        .then((res) => {
+            getProducts(res.data);
+            this.setState({products: res.data});
         });
     }
 
     render() {
 
-        const data = this.state;
+        const data = this.state.productGroup;
         console.log('------------\n'+JSON.stringify(data)+'\n---------------');
         return (
             <div>
@@ -33,5 +41,7 @@ export default class EcommerceComponent extends Component {
             </div>
         );
     }
-
 }
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(EcommerceComponent);

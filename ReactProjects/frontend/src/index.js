@@ -1,25 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+
+import { Route, Switch } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux';
+
+
 import './index.css';
-// import App from './App';
+import { store } from './Redux/store';
 import EcommerceComponent from './widget/Ecom.component';
 import * as serviceWorker from './serviceWorker';
 
-// const appStart = () => {
-//   return (
-//     <Provider store={store} >
-//       <React.StrictMode>
-//         {/* <App /> */}
-//         "HELLO World"
-//       </React.StrictMode>
-//     </Provider>
-    
-//   );
-// };
+
+
+const AppStart = () => {
+  return (
+    <Provider store={store} >
+        {/* <ConnectedRouter> */}
+          {/* <Switch> */}
+            <EcommerceComponent />
+          {/* </Switch> */}
+        {/* </ConnectedRouter> */}
+    </Provider>
+  );
+};
 
 ReactDOM.render(
-  <EcommerceComponent />
+  AppStart
   ,
   document.getElementById('root')
 );
