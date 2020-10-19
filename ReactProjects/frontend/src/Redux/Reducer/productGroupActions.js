@@ -1,10 +1,14 @@
+import Actions from './ActionType'
 let initialState = {
-    product_groups : {}
 };
 
 export default function (state=initialState, action) {
-    const {type} = action;
+    const {type, payload = {}} = action;
     switch(type) {
+        case Actions.ProductCategory.PRODUCT_GROUP : return {
+            ...state,
+            ...payload
+        };
         default :   return state;   
     }
 }
