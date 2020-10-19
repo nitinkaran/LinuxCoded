@@ -1,4 +1,5 @@
 import React from 'react';
+import history from '../history';
 
 const Home = () => {
     return (
@@ -7,8 +8,9 @@ const Home = () => {
                 HOME PAGE
             </h1>
             <h4 className="faded-heading">
-                Just a small detail page need to be editted
+                Just a small HOME page need to be editted
             </h4>
+            <button onClick={() => history.push('/Stuff')}>NEXT</button>
         </div>
     );
 };

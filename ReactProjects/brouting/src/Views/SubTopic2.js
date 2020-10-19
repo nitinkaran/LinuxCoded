@@ -1,4 +1,5 @@
 import React from 'react';
+import history from '../history';
 
 const SubTopic2 = () => {
     return (
@@ -7,8 +8,10 @@ const SubTopic2 = () => {
                 SubTopic2 Page
             </h1>
             <h4 className="faded-heading">
-                Just a small detail page need to be editted
+                SubTopic2 page contains least important topics from exam perspective
             </h4>
+            <button onClick={() => history.push('/SubTopic1')}>PREV</button>
+            <button onClick={() => history.push('/')}>NEXT</button>
         </div>
     );
 };
