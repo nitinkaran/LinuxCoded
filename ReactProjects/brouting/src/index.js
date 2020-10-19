@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
+import App from './Application';
 
 ReactDOM.render(
   <React.StrictMode>
-    "Hello World"
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,4 +1,5 @@
 import React from 'react';
+import history from '../history';
 
 const Contacts = () => {
     return (
@@ -7,8 +8,10 @@ const Contacts = () => {
                 Details Page
             </h1>
             <h4 className="faded-heading">
-                Just a small detail page need to be editted
+                A Details page to consist of the details of any item
             </h4>
+            <button onClick={() => history.push('/Contacts')}>PREV</button>
+            <button onClick={() => history.push('/Topics')}>NEXT</button>
         </div>
     );
 };
