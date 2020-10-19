@@ -29,7 +29,7 @@ export default class App extends React.Component {
               <Route path="/stuff" component={Stuff}/>
               <Route path="/contact" component={Contact}/>
               <Route path="/file" component={File}/>
-            </Switch>            
+            </Switch>
           </div>
         </div>
       </BrowserRouter>

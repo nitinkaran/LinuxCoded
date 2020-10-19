@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, NavLink, Route, useParams, useRouteMatch, Switch } from "react-router-dom";
+import { NavLink, Route, useRouteMatch, Switch } from "react-router-dom";
 import ReactFile from "./ReactFile";
 import ReduxFile from './ReduxFile';
 
