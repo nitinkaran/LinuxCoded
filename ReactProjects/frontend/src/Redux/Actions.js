@@ -1,15 +1,17 @@
-export const addProductGroup = (response) => {
+import { ProductCategory } from './Reducer/ActionType';
+
+export const retrieveProductGroup = (response) => {
     return {
-        type : 'productGroup',
+        type : ProductCategory.PRODUCT_GROUP,
         payload : {
             ...response
         }
     };
 };
 
-export const addProducts = (response) => {
+export const retrieveProducts = (response) => {
     return {
-        type : 'products',
+        type : ProductCategory.PRODUCTS,
         payload : {
             ...response
         }

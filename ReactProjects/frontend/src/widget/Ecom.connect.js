@@ -1,20 +1,22 @@
-import { addProductGroup, addProducts } from '../Redux/Actions';
+import { retrieveProductGroup, retrieveProducts } from '../Redux/Actions';
+import { getProductCategoryName } from '../Redux/Reducer/FrontendSelector';
 
 export const mapStateToProps = (state) => {
-    const { productGroup } = state;
+    // const { productGroup } = state;
+    const productGroupNames = getProductCategoryName(state);
     return {
-        productGroup
+        productGroupNames
     };
 };
 
 export const mapDispatchToProps = (dispatch) => {
     return {
         getProductGroup : (response) => {
-            dispatch(addProductGroup(response));
+            dispatch(retrieveProductGroup(response));
         },
 
         getProducts : (response) => {
-            dispatch(addProducts(response));
+            dispatch(retrieveProducts(response));
         }
     };
 };

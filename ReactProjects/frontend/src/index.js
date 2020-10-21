@@ -1,37 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import {Provider} from 'react-redux';
 
-import { Route, Switch } from 'react-router-dom';
-import { ConnectedRouter } from 'react-router-redux';
-
-
-import './index.css';
 import { store } from './Redux/store';
+import history from './Redux/history';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import EcommerceComponent from './widget/Ecom.component';
-import * as serviceWorker from './serviceWorker';
 
-
-
-const AppStart = () => {
+const App = () => {
   return (
-    <Provider store={store} >
-        {/* <ConnectedRouter> */}
-          {/* <Switch> */}
-            <EcommerceComponent />
-          {/* </Switch> */}
-        {/* </ConnectedRouter> */}
+    <Provider store={store} history={history} >      
+        <EcommerceComponent />
     </Provider>
   );
 };
 
 ReactDOM.render(
-  AppStart
-  ,
+  <App />,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
