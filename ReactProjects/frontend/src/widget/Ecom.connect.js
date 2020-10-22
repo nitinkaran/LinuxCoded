@@ -2,7 +2,6 @@ import { retrieveProductGroup, retrieveProducts } from '../Redux/Actions';
 import { getProductCategoryName } from '../Redux/Reducer/FrontendSelector';
 
 export const mapStateToProps = (state) => {
-    // const { productGroup } = state;
     const productGroupNames = getProductCategoryName(state);
     return {
         productGroupNames

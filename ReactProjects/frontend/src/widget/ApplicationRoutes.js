@@ -2,15 +2,24 @@ import React from 'react';
 import { Route, Router, Switch } from 'react-router-dom';
 import history from '../Redux/history';
 
-import Home from  './templates/components/Home';
-import Article from './templates/components/Article';
-import ArticleConfiguration from './templates/components/ArticleConfiguration';
-import Cart from './templates/components/Cart';
-import Confirmation from './templates/components/Confirmation';
+import Home from  './templates/Home';
+import ArticleConfiguration from './templates/ArticleConfiguration';
+import Cart from './templates/Cart';
+import Confirmation from './templates/Confirmation';
+
+import Books from './templates/components/Books';
+import Cloths from './templates/components/Cloths';
+import Computers from './templates/components/Computers';
+import Furniture from './templates/components/Furniture';
+import Tools from './templates/components/Tools';
 
 const appRoutesConfig = [
     {path : '/', component : Home},
-    {path : '/article', component : Article},
+    {path : '/books', component : Books},
+    {path : '/cloths', component : Cloths},
+    {path : '/computers', component : Computers},
+    {path : '/furniture', component : Furniture},
+    {path : '/tools', component : Tools},
     {path : '/articleConfiguration', component : ArticleConfiguration},
     {path : '/cart', component : Cart},
     {path : '/confirmation', component : Confirmation}
