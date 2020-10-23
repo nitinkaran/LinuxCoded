@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import _isEmpty from 'lodash/isEmpty';
 
 import { getArticleBasedOnType } from '../../../Redux/Reducer/FrontendSelector';
 import { mapDispatchToProps } from '../../Ecom.connect';
@@ -15,22 +16,24 @@ const mapStateToProps = (state) => {
 
 class Books extends Component {
 
-    // componentDidMount() {
-    //     const { getProducts } = this.props;
-    //     FrontApi.getProducts()
-    //     .then((response) => {
-    //         getProducts(response.data);
-    //     });
-    // }
+    componentDidMount() {
+        const { getProducts } = this.props;
+        FrontApi.getProducts()
+        .then((response) => {
+            getProducts(response.data);
+        });
+    }
 
     GenerateList() {
-        const { productsList } = this.props;
-        return <GenericItem productsList={productsList} />;
+        const { productsList, getSelectedProductDetails } = this.props;
+        const GenericItemProps = {productsList, selectedItem: getSelectedProductDetails};
+        if (_isEmpty(productsList)) {
+            return;
+        }
+        return <GenericItem GenericItemProps={GenericItemProps} />;
     }
 
     render() {
-        // const { productsList } = this.props;
-        // return Array.isArray(productsList) ? <GenericItem productsList={productsList} /> : null;
         return (
             <div>
                 {this.GenerateList()}

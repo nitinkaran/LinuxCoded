@@ -1,3 +1,5 @@
+import _isEmpty from 'lodash/isEmpty';
+
 const getMappedArrayOfProductGroup = (productGroup) => {
     return Object.keys(productGroup).map(item => productGroup[item].productGroupType);
 };
@@ -8,8 +10,13 @@ export const getProductCategoryName = (store={}) => {
 };
 
 const getMappedArrayOfArticleOnType = (products, type) => {
-    return Object.keys(products).map(item => {
-        return products[item].productType.toLowerCase() === type ? products[item] : null
+    if (_isEmpty(products)) {
+        return
+    }
+
+    const {products: productsObject} = products;
+    return Object.keys(productsObject).map(item => {
+        return productsObject[item].productType.toLowerCase() === type ? productsObject[item] : null
     }).filter(item => item);
 };
 

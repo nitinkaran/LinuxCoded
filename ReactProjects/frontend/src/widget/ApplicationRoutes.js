@@ -3,7 +3,8 @@ import { Route, Router, Switch } from 'react-router-dom';
 import history from '../Redux/history';
 
 import Home from  './templates/Home';
-import ArticleConfiguration from './templates/ArticleConfiguration';
+// import ArticleConfiguration from './templates/ArticleConfiguration';
+import ArticleConfiguration from './templates/components/GenericItem/GenericItemDetails';
 import Cart from './templates/Cart';
 import Confirmation from './templates/Confirmation';
 

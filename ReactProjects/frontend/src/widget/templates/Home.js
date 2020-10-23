@@ -13,15 +13,10 @@ import CarouselSelection from './CarouselSection';
 class Home extends Component {
 
     componentDidMount() {
-        const {getProductGroup, getProducts} = this.props;
+        const {getProductGroup} = this.props;
         FrontApi.getProductCategories()
         .then((response) => {
             getProductGroup(response.data);
-        });
-
-        FrontApi.getProducts()
-        .then((response) => {
-            getProducts(response.data);
         });
     }
 
