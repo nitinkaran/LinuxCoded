@@ -1,11 +1,17 @@
-import { retrieveProductGroup, retrieveProducts } from '../Redux/Actions';
+import { 
+    retrieveProductGroup, 
+    retrieveProducts,
+    storeSelectedProduct,
+    retrieveProductById
+} from '../Redux/Actions';
 import { getProductCategoryName } from '../Redux/Reducer/FrontendSelector';
 
 export const mapStateToProps = (state) => {
-    // const { productGroup } = state;
     const productGroupNames = getProductCategoryName(state);
+    const { products } = state;
     return {
-        productGroupNames
+        productGroupNames,
+        products
     };
 };
 
@@ -17,6 +23,14 @@ export const mapDispatchToProps = (dispatch) => {
 
         getProducts : (response) => {
             dispatch(retrieveProducts(response));
+        },
+
+        getProductDetailsById : (response) => {
+            dispatch(retrieveProductById(response));
+        },
+
+        getSelectedProductDetails : (selectedProductId) => {
+            dispatch(storeSelectedProduct(selectedProductId));
         }
     };
 };

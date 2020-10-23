@@ -33,4 +33,8 @@ export default class FrontendApi {
         return this.callAxios('get', '/product');
     };
 
+    static getProductById = (productId) => {
+        return this.callAxios('get', `/product/${productId}`);
+    }
+
 }

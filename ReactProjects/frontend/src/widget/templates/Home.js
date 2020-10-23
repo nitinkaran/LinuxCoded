@@ -4,29 +4,30 @@ import { connect } from 'react-redux';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import _isEmpty from 'lodash/isEmpty';
+import { NavLink } from 'react-router-dom';
 
-import { mapDispatchToProps, mapStateToProps } from '../../Ecom.connect';
-import FrontApi from '../../../Api/FrontendApi';
-import CarouselSelection from '../CarouselSection';
+import { mapDispatchToProps, mapStateToProps } from '../Ecom.connect';
+import FrontApi from '../../Api/FrontendApi';
+import CarouselSelection from './CarouselSection';
 
 class Home extends Component {
 
     componentDidMount() {
-        const {getProductGroup, getProducts} = this.props;
+        const {getProductGroup} = this.props;
         FrontApi.getProductCategories()
         .then((response) => {
             getProductGroup(response.data);
-        });
-
-        FrontApi.getProducts()
-        .then((res) => {
-            getProducts(res.data);
         });
     }
 
     createNavItemLink(item) {
         let itemName = item.toLocaleLowerCase();
-        return <Nav.Item key={`${item}`}><Nav.Link href={`${itemName}`}>{item}</Nav.Link></Nav.Item>;
+        let itemDisplay = item.charAt(0)+item.slice(1).toLowerCase();        
+        return (
+            <Nav.Item key={`${item}`}>
+                <NavLink className="nav-link" to={`/${itemName}`}>{itemDisplay}</NavLink>
+            </Nav.Item>
+        );
     }
 
     createBaseNav(productGroupNames) {
@@ -47,7 +48,7 @@ class Home extends Component {
 
     renderCarouselSection() {
         // to be implemented after adding the image in the backend
-        return <CarouselSelection />
+        return <CarouselSelection />;
     }
 
     // renderDealsSection() {
@@ -55,12 +56,10 @@ class Home extends Component {
     // }
 
     render() {
-        const { productGroupNames } = this.props;
-        console.log(productGroupNames);
         return (
             <div>
                 {this.renderHeaderSection()}
-                {this.renderCarouselSection()}
+                {/* {this.renderCarouselSection()} */}
             </div>
         );
     }
