@@ -26,7 +26,7 @@ class Books extends Component {
 
     GenerateList() {
         const { productsList, getSelectedProductDetails } = this.props;
-        const GenericItemProps = {productsList, selectedItem: getSelectedProductDetails};
+        const GenericItemProps = {productsList, getSelectedProductDetails};
         if (_isEmpty(productsList)) {
             return;
         }
