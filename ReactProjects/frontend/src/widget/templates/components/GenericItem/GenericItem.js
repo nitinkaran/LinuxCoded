@@ -7,18 +7,26 @@ import history from '../../../../Redux/history';
 
 import ImageLocation from "../../ImageLocation";
 
-const updateLocation = (selectedItem, productId) => {
-    selectedItem(productId);
+const updateLocation = (getSelectedProductDetails, productId) => {
+    getSelectedProductDetails(productId);
     history.push('/articleConfiguration');
 };
 
-const createCardColumns = (item, selectedItem) => {
+const createCardColumns = (item, getSelectedProductDetails) => {
     const { productName, productDescription, productPrice, productId } = item;
     return (
         <Card style={{ width: '18rem', height: '32rem' }} key={productId} >
             <Card.Img variant="top" src={require(`${ImageLocation.path2}`)} />
             <Card.Body>
-                <Card.Title>{productName}</Card.Title>
+                <Card.Title
+                    style={{ 
+                        overflow: 'hidden',
+                        width: '250px',
+                        textOverflow: 'ellipsis',
+                        whiteSpace: 'nowrap'
+                    }}
+                >
+                    {productName}</Card.Title>
                 <Card.Text 
                     style={{ 
                         overflow: 'hidden',
@@ -31,18 +39,17 @@ const createCardColumns = (item, selectedItem) => {
                 </Card.Text>
 
                 <Card.Text>Price : Rs {productPrice}</Card.Text>
-                {/* <Button variant="primary" onClick={() => selectedItem(productId)} block >Select</Button> */}
-                <Button variant="primary" onClick={() => updateLocation(selectedItem, productId)} block >Select</Button>
+                <Button variant="primary" onClick={() => updateLocation(getSelectedProductDetails, productId)} block >Select</Button>
             </Card.Body>
         </Card>
     );
 };
 
 const GenericItem = ({GenericItemProps}) => {
-    const { productsList, selectedItem } = GenericItemProps;
+    const { productsList, getSelectedProductDetails } = GenericItemProps;
     return (
         <CardColumns>
-            {productsList.map(item => createCardColumns(item, selectedItem))}
+            {productsList.map(item => createCardColumns(item, getSelectedProductDetails))}
         </CardColumns>
     );
 };
