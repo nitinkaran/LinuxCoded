@@ -1,44 +1,149 @@
 [
-	{
-        "productType": "BOOKS",
-        "productPrice": 259.0,
-        "productName": "Who painted my money white",
-        "productDescription": "Corruption charges on MP's and how they tossed the government to steal people's money",
-        "productImage": "The image is on the way to be added just looking for storage methods"
-    },
-    {
-        "productType": "FURNITURE",
-        "productPrice": 5399.0, 
-        "productName": "CHAR",
-        "productDescription": "A NEELKAMAL product for the normal usage in the house",
-        "productImage": "Model shoots are going on ...... your wait will be over in few days"
-    },
-    {
-        "productType": "BOOKS",
-        "productPrice": 759.0,
-        "productName": "The IMMORTALS OF KING DYNASTY",
-        "productDescription": "A fairy tale of king dynasty",
-        "productImage": "The image is on the way to be added just looking for storage methods"
-    },
-    {
-        "productType": "CLOTHS",
-        "productPrice": 599.0, 
-        "productName": "TROUSER",
-        "productDescription": "A Sleek trouser of your choice now available at your doorstep",
-        "productImage": "Model shoots are going on ...... your wait will be over in few days"
-    },
-    {
-        "productType": "COMPUTER",
-        "productPrice": 599.0,
-        "productName": "COMP",
-        "productDescription": "A new designed sleek laptop for comfortable usage",
-        "productImage": "We are covering the specifications of the product. It will be released today"
-    },
-    {
-        "productType": "TOOLS",
-        "productPrice": 899.0,
-        "productName": "Hammer",
-        "productDescription": "A Taparia product",
-        "productImage": "We have you got your wish.....we are on the way to deliver it to you"
-    }
+  {
+    "productType": "BOOKS",
+    "productPrice": 489,
+    "productName": "Discrete Mathematics and Its Applications With Combinatorics and Graph Theory",
+    "productDescription": "Rosen's Discrete Mathematics and its Applications presents a precise, relevant, comprehensive approach to mathematical concepts. This world-renowned best-selling text was written to accommodate the",
+    "productImage": "The image is on the way to be added just looking for storage methods"
+  },
+  {
+    "productType": "BOOKS",
+    "productPrice": 1975,
+    "productName": "Introduction to Algorithms (Eastern Economy Edition)",
+    "productDescription": "This internationally acclaimed textbook provides a comprehensive introduction to the modern study of computer algorithms. It covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers.",
+    "productImage": "The image is on the way to be added just looking for storage methods"
+  },
+  {
+    "productType": "BOOKS",
+    "productPrice": 253,
+    "productName": "Let Us C: Authentic Guide to C PROGRAMMING Language 17th Edition",
+    "productDescription": "The new edition of this classic book has been thoroughly revamped, but remains faithful to the principles that have established it as a favourite amongst students, teachers and software professionals round the world.",
+    "productImage": "The image is on the way to be added just looking for storage methods"
+  },
+  {
+    "productType": "BOOKS",
+    "productPrice": 199,
+    "productName": "Make Your Own Luck: How to Increase Your Odds of Success in Sales, Startups, Corporate Career and Life",
+    "productDescription": "What does it take to have a successful sales career.What does it take to create a billion dollar startup?What does it take to move up and get promoted in your corporate career?What does it take to succeed in life?It takes luck.",
+    "productImage": "The image is on the way to be added just looking for storage methods"
+  },
+  {
+    "productType": "BOOKS",
+    "productPrice": 199,
+    "productName": "Make Your Own Luck: How to Increase Your Odds of Success in Sales, Startups, Corporate Career and Life",
+    "productDescription": "What does it take to have a successful sales career.What does it take to create a billion dollar startup?What does it take to move up and get promoted in your corporate career?What does it take to succeed in life?It takes luck.",
+    "productImage": "The image is on the way to be added just looking for storage methods"
+  },
+  {
+    "productType": "FURNITURE",
+    "productPrice": 10999,
+    "productName": "Furny Herostyle 3 Seater Sofa (Grey-Black) ",
+    "productDescription": " Primary Material: Timberwood, Upholstery Material: Fabric, Top Material: Wood, Footboard Upholstery: Fabric Color: Light Grey-Black, Style: Modern, Seating Capacity: Three seater Assembly Instructions: DIY (Do It Yourself)",
+    "productImage": "FURNITURE shoots are going on ...... your wait will be over in few days"
+  },
+  {
+    "productType": "FURNITURE",
+    "productPrice": 17499,
+    "productName": "adorn india aspen three seater sofa cum bed (medium grey & black)",
+    "productDescription": "Product dimensions in inches Package = L 75x B 48x H 39rimary Material: Wood, secondary material :Foam Upholstery Material: Fabric : color : Medium Grey & Black Warranty:- 3 years warranty for Foam (warranty covers only if the foam sinks) Foam gets soft after a period of time which is in its nature. ",
+    "productImage": "FURNITURE shoots are going on ...... your wait will be over in few days"
+  },
+  {
+    "productType": "FURNITURE",
+    "productPrice": 1299,
+    "productName": "CADDYFULL Large Bean Bag Without Beans (Navy Blue)",
+    "productDescription": "Product Dimensions: Length (59 cm), Width (59 cm), Height (87 cm Primary Material: Leatherette, Upholstery Material: Leatherette Color: Blue, Style: Casual. Beans Required: 1.5 kg No Assembly Required: The product is delivered in a pre-assembled",
+    "productImage": "FURNITURE shoots are going on ...... your wait will be over in few days"
+  },
+  {
+    "productType": "FURNITURE",
+    "productPrice": 3499,
+    "productName": "AmazonBasics Zero Gravity Reclining Lounge Portable Chair, Black ",
+    "productDescription": "Zero-gravity outdoor chair provides a stress-free weightless feel for optimal relaxation. Powder-coated steel frame for strength and lightweight portability. Double bungee support system securely connects the weather-resistant Textilene fabric to the frame.",
+    "productImage": "FURNITURE shoots are going on ...... your wait will be over in few days"
+  },
+  {
+    "productType": "CLOTHS",
+    "productPrice": 509,
+    "productName": "Diverse Men's Slim Fit Cotton Shorts ",
+    "productDescription": "Care Instructions: Hand Wash Only Fit Type: Slim Fit 100% Cotton Slim fit shorts with knee length Printed twill chino shorts 4 Pocket shorts Machine wash warm, wash dark colours separately, do not bleach, tumble dry low, warm iron Disclaimer",
+    "productImage": "Model shoots are going on ...... your wait will be over in few days"
+  },
+  {
+    "productType": "CLOTHS",
+    "productPrice": 799,
+    "productName": "US Polo Association Men's Pyjama Bottom ",
+    "productDescription": " Fabric Composition : 100% Cotton; Premium combed cotton woven fabric with softer hand feel,good absorbency & breathability Signature logo printed fabric Relaxed Fit . Can be worn as Loungewear,Leisurewear & Comfortwear Fabric covered elasticed waistband",
+    "productImage": "CLOTHS shoots are going on ...... your wait will be over in few days"
+  },
+  {
+    "productType": "CLOTHS",
+    "productPrice": 549,
+    "productName": "Amazon Brand - Symbol Men's Slim Fit Stretchable Formal Trousers ",
+    "productDescription": "Care Instructions: Machine Wash. Fit Type: Slim Care Instructions: Gentle Machine Wash Garment Waist size runs 2.5 inches higher. Refer size chart to pick your correct size 65% Polyester,33%Viscose and 2%Lycra Slim Fit Flat front with slant pockets",
+    "productImage": "Model shoots are going on ...... your wait will be over in few days"
+  },
+  {
+    "productType": "CLOTHS",
+    "productPrice": 649,
+    "productName": "Ben Martin Men's Relaxed Fit Jeans ",
+    "productDescription": "Care Instructions: Do not bleach, dry in shade Fit Type: Regular Fit Style : Casual Wear. Perfect For : Men And Boy.Material : Denim Jeans. Wash Care Instructions : Do Not Bleach, Dry In Shade. Directly From Manufacturer To Buyer At Lowest Cost Possible.",
+    "productImage": "Model shoots are going on ...... your wait will be over in few days"
+  },
+  {
+    "productType": "COMPUTER",
+    "productPrice": 11989,
+    "productName": "Intel® Core™ i5-9400F Processor (9M Cache, up to 4.10 GHz) ",
+    "productDescription": " Intel Core i5-9400F Processor (9M Cache, up to 4.10 GHz) Intel Core i5-9400F Processor (9M Cache, up to 4.10 GHz)9th Generation Intel Core i5 ProcessorsProducts formerly Coffee LakeDesktopLithography14 nmProcessor Base Frequency2.90 GHzBus",
+    "productImage": "We are covering the specifications of the product. It will be released today"
+  },
+  {
+    "productType": "COMPUTER",
+    "productPrice": 6199,
+    "productName": "HP DeskJet 2778 All-in-One Ink Advantage Wireless Colour Printer ",
+    "productDescription": " Printer type: Ink Advantage; Functionality : Print, Scan and Copy; Printer output :Color Connectivity : High-speed USB 2.0 Connectivity, Wifi Compatible Ink Cartridge:HP 682 Black Original Ink Cartridge, HP 682 Tri-colour Original Ink Cartridge, Page Yield",
+    "productImage": "We are covering the specifications of the product. It will be released today"
+  },
+  {
+    "productType": "COMPUTER",
+    "productPrice": 3599,
+    "productName": "Seagate Expansion Portable 1 TB External Hard Drive HDD – USB 3.0 for PC Laptop and 3-Year Rescue Services (STEA1000400) ",
+    "productDescription": "Easily store and access 1 TB of content on the go with Seagate Expansion Portable hard drive This external hard drive for Windows computers makes backup a snap — just drag-and-drop! To get set up",
+    "productImage": "We are covering the specifications of the product. It will be released today"
+  },
+  {
+    "productType": "COMPUTER",
+    "productPrice": 8299,
+    "productName": "Seagate Game Drive for Xbox 4 TB External Hard Drive Portable HDD – Designed for Xbox One (STEA4000402) ",
+    "productDescription": " Don't delete games from Xbox consoles just to make room for new ones — store 100+ titles with 4 TB of portable external hard drive storage Experience no-lag gaming with a portable hard drive optimised specifically",
+    "productImage": "We are covering the specifications of the product. It will be released today"
+  },
+  {
+    "productType": "TOOLS",
+    "productPrice": 175,
+    "productName": "Tiny 4-Digit Safe PIN Hand Bag Shaped Combination Padlock Lock (Color May Vary) ",
+    "productDescription": "Material: SteelColor: Silver 1 month warranty provided by the manufacturer from date of purchase Product Features:. 100% brand new combination padlock Portable and simply design easy to use. Use 4-Digit resettable dial without the trouble of losing",
+    "productImage": "We have you got your wish.....we are on the way to deliver it to you"
+  },
+  {
+    "productType": "TOOLS",
+    "productPrice": 899,
+    "productName": "Scotch-Brite 2-in-1 Bucket Spin Mop (Green, 2 Refills",
+    "productDescription": " Twin Bucket Spin Mop for easy wringing and rinsing Microfibre technology helps lift and trap dirt with unique easy clean surface for superior clean Dual refill ensures usage",
+    "productImage": "We have you got your wish.....we are on the way to deliver it to you"
+  },
+  {
+    "productType": "TOOLS",
+    "productPrice": 1899,
+    "productName": "KT GLOXY Stainless Steel Folding Towel Rack/Towel Stand/Hanger/Towel Holder/Bathroom Accessories-Chrome Finish(Made in India) (24 Inch) ",
+    "productDescription": " Material: High Grade Stainless Steel, Color: Silver (Mirror Chrome Finish) Package Contents: 1-Piece Folding Towel Rack (Size : 24 Inches) Constructed by stainless steel, durable, no rust, ensuring quality and longevity, the top shelf holds your",
+    "productImage": "We have you got your wish.....we are on the way to deliver it to you"
+  },
+  {
+    "productType": "TOOLS",
+    "productPrice": 1299,
+    "productName": "BLACK+DECKER BMT108C Hand Tool Kit (108-Piece) for Home DIY and Professional use ",
+    "productDescription": " Compact, Lightweight and Perfect handtool kit for Household DIY Tasks & emergency maintenance. Contains:1x Stubby Adjustable Wrench Carbon Steel 1x 160mm Long Nose Pliers Carbon Steel 1x 160mm Combination Pliers Carbon Steel 1x 9-LED Flashlight 1x 18mm",
+    "productImage": "We have you got your wish.....we are on the way to deliver it to you"
+  }
 ]
