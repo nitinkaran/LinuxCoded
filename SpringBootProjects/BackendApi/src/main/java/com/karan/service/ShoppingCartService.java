@@ -50,7 +50,7 @@ public class ShoppingCartService {
 		shoppingCartRepository.deleteById(cartId);
 	}
 
-	public void addAnotherCartItemToShoppingCart(String cartId, CartItem newCartItem) {
+	public ShoppingCart addAnotherCartItemToShoppingCart(String cartId, CartItem newCartItem) {
 		Optional<ShoppingCart> existingCart = shoppingCartRepository.findById(cartId);
 		List<CartItem> list = new ArrayList<CartItem>();
 		ShoppingCart cart = existingCart.get();
@@ -62,7 +62,7 @@ public class ShoppingCartService {
 		list.add(newCartItem);
 		cart.setShoppingCartTotalPrice(cart.getShoppingCartTotalPrice()+newCartItem.getCartItemPrice());
 		cart.setCartItemList(list);
-		shoppingCartRepository.save(cart);
+		return shoppingCartRepository.save(cart);
 	}
 
 	public void deleteCartItemFromCart(String cartId, String cartItemId) {

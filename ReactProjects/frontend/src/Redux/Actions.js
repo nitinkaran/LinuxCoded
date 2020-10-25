@@ -37,3 +37,25 @@ export const retrieveProductById = (response) => {
         }
     }
 };
+
+export const saveCartItem = (response) => {
+    return {
+        type : ProductCategory.CART_ITEM,
+        payload : {
+            CartItem : {
+                ...response
+            }
+        }
+    };
+};
+
+export const saveShoppingCart = (response) => {
+    return {
+        type : ProductCategory.CART,
+        payload : {
+            Cart : {
+                ...response
+            }
+        }
+    };
+};

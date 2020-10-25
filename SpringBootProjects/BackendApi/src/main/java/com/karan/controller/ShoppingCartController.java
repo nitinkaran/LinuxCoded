@@ -3,6 +3,7 @@ package com.karan.controller;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import com.karan.models.CartItem;
 import com.karan.models.ShoppingCart;
 import com.karan.service.ShoppingCartService;
 
+@CrossOrigin
 @RestController
 public class ShoppingCartController {
 
@@ -27,8 +29,8 @@ public class ShoppingCartController {
 	}
 	
 	@PostMapping("/cart/{cartId}")
-	public void addAnotherCartItemToShoppingCart(@PathVariable String cartId, @RequestBody CartItem cartItem) {
-		shoppingCartService.addAnotherCartItemToShoppingCart(cartId, cartItem);
+	public ShoppingCart addAnotherCartItemToShoppingCart(@PathVariable String cartId, @RequestBody CartItem cartItem) {
+		return shoppingCartService.addAnotherCartItemToShoppingCart(cartId, cartItem);
 	}
 	
 	@GetMapping("/cart/{cartId}")

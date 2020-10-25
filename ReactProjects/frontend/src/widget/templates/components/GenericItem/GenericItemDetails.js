@@ -9,6 +9,11 @@ import ImageLocation from "../../ImageLocation";
 
 import { mapStateToProps, mapDispatchToProps} from '../../../Ecom.connect';
 import FrontApi from '../../../../Api/FrontendApi';
+import history from '../../../../Redux/history';
+
+const updateLocation = () => {
+    history.push('/cart');
+};
 
 class GenericItemDetails extends Component{
 
@@ -47,7 +52,7 @@ class GenericItemDetails extends Component{
                             {productDescription}
                         </Card.Text>
                         <Card.Text>Price : Rs {productPrice}</Card.Text>
-                        <Button variant="primary" >Select</Button>
+                        <Button variant="primary" onClick={() => updateLocation()} >Select</Button>
                     </Card.Body>
                 </Card>
             </div>

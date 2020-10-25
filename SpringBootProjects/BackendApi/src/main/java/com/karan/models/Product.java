@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -29,6 +30,8 @@ public class Product implements Serializable{
 	private String productId;
 	private String productType;
 	private String productName;
+	@Lob
+	@Column(columnDefinition="clob")
 	private String productDescription;
 	private double productPrice;
 	private String productImage;
