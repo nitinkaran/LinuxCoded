@@ -3,5 +3,7 @@ export const ProductCategory = {
     PRODUCTS            : "products",
     PRODUCT_SELECTED    : "productSelected",
     PRODUCT_DETAILS     : "productDetails",
-    NAVIGATE_TO_DETAILS : "navigateToDetails"
+    NAVIGATE_TO_DETAILS : "navigateToDetails",
+    CART_ITEM           : "cartItem",
+    CART                : "cart"
 };

@@ -16,12 +16,13 @@ export default class FrontendApi {
         return config;
     }
     
-    static callAxios(methodType, urlLink) {
+    static callAxios(methodType, urlLink, payload={}) {
         const prependUrl = `${this.getUrl()}${urlLink}`;
         return axios({
             method: methodType,
             url: prependUrl,
-            config: this.getConfig()
+            config: this.getConfig(),
+            data: payload
         });
     }
 
@@ -35,6 +36,18 @@ export default class FrontendApi {
 
     static getProductById = (productId) => {
         return this.callAxios('get', `/product/${productId}`);
+    }
+
+    static createCartItem = (selectedProduct) => {
+        return this.callAxios('post', '/create-cartItem', selectedProduct);
+    }
+
+    static createShoppingCart = (cartItem) => {
+        return this.callAxios('post', '/cart', cartItem);
+    }
+
+    static addCartItemToShoppingCart = (cartItem, cartId) => {
+        return this.callAxios('post', `/cart/${cartId}`, cartItem);
     }
 
 }

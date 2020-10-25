@@ -15,16 +15,37 @@
   },
   {
     "productType": "BOOKS",
-    "productPrice": 253,
-    "productName": "Let Us C: Authentic Guide to C PROGRAMMING Language 17th Edition",
-    "productDescription": "The new edition of this classic book has been thoroughly revamped, but remains faithful to the principles that have established it as a favourite amongst students, teachers and software professionals round the world.",
+    "productPrice": 860,
+    "productName": "Operating System Concepts, 10e EPUB Reg Card Abridged Print Companion Set",
+    "productDescription": "The tenth edition of Operating System Concepts has beenrevised to keep it fresh and up-to-date with contemporary examples ofhow operating systems function. It combines instruction on concepts withreal-world applications so that students can understand the practicalusage of the content. A Linux virtual machine (including C and Javasource code and development tools) allows students to complete ",
     "productImage": "The image is on the way to be added just looking for storage methods"
   },
   {
     "productType": "BOOKS",
-    "productPrice": 199,
-    "productName": "Make Your Own Luck: How to Increase Your Odds of Success in Sales, Startups, Corporate Career and Life",
-    "productDescription": "What does it take to have a successful sales career.What does it take to create a billion dollar startup?What does it take to move up and get promoted in your corporate career?What does it take to succeed in life?It takes luck.",
+    "productPrice": 734,
+    "productName": "Computer Architecture: A Quantitative Approach",
+    "productDescription": "Computer Architecture: A Quantitative Approach, Sixth Edition hasbeen considered essential reading by instructors, students andpractitioners of computer design for over 20 years. The sixth edition ofthis classic textbook from Hennessy and Patterson, winners of the 2017ACM A.M. Turing Award recognizing contributions of lasting and majortechnical importance to the computing field, is fully revised with thelatest developments in processor and system architecture.",
+    "productImage": "The image is on the way to be added just looking for storage methods"
+  },
+  {
+    "productType": "BOOKS",
+    "productPrice": 630,
+    "productName": "An Introduction to Formal Languages and Automata",
+    "productDescription": "An Introduction to Formal Languages and Automata, Sixth Edition providesan accessible, student-friendly presentation of all material essentialto an introductory Theory of Computation course. Written to address thefundamentals of formal languages, automata, and computability, the textis designed to familiarize students with the foundations and principlesof computer science and to strengthen the students' ability to carry outformal and rigorous mathematical arguments. ",
+    "productImage": "The image is on the way to be added just looking for storage methods"
+  },
+  {
+    "productType": "BOOKS",
+    "productPrice": 366,
+    "productName": "Computer Networking: A Top-Down Approach",
+    "productDescription": "Computer Networking: A Top Down Approach builds on theauthor’s long tradition of teaching this complex subject through alayered approach in a “top-down manner.” The text works its way from theapplication layer down toward the physical layer, motivating readers byexposing them to important concepts early in their study of networking.Focusing on the Internet and the fundamentally important issues ofnetworking, this text provides an excellent foundation for readersinterested in computer science and electrical engineering, withoutrequiring extensive knowledge of programming or mathematics.",
+    "productImage": "The image is on the way to be added just looking for storage methods"
+  },
+  {
+    "productType": "BOOKS",
+    "productPrice": 253,
+    "productName": "Let Us C: Authentic Guide to C PROGRAMMING Language 17th Edition",
+    "productDescription": "The new edition of this classic book has been thoroughly revamped, but remains faithful to the principles that have established it as a favourite amongst students, teachers and software professionals round the world.",
     "productImage": "The image is on the way to be added just looking for storage methods"
   },
   {

@@ -2,16 +2,19 @@ import {
     retrieveProductGroup, 
     retrieveProducts,
     storeSelectedProduct,
-    retrieveProductById
+    retrieveProductById,
+    saveCartItem,
+    saveShoppingCart
 } from '../Redux/Actions';
 import { getProductCategoryName } from '../Redux/Reducer/FrontendSelector';
 
 export const mapStateToProps = (state) => {
     const productGroupNames = getProductCategoryName(state);
-    const { products } = state;
+    const { products, CartStore } = state;
     return {
         productGroupNames,
-        products
+        products,
+        CartStore
     };
 };
 
@@ -31,6 +34,14 @@ export const mapDispatchToProps = (dispatch) => {
 
         getSelectedProductDetails : (selectedProductId) => {
             dispatch(storeSelectedProduct(selectedProductId));
-        }
+        },
+
+        saveCartItem : (response) => {
+            dispatch(saveCartItem(response));
+        },
+
+        saveShoppingCart : (response) => {
+            dispatch(saveShoppingCart(response));
+        },
     };
 };
