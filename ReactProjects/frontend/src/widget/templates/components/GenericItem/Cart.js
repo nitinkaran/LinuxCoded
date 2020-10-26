@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import _isEmpty from 'lodash/isEmpty';
 
-// import ImageLocation from "../../ImageLocation";
-// import history from '../../../../Redux/history';
 import { mapStateToProps, mapDispatchToProps} from '../../../Ecom.connect';
 import FrontendApi from '../../../../Api/FrontendApi';
 import CartItems from './CartItems';
