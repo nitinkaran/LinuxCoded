@@ -13,6 +13,11 @@ import history from '../../Redux/history';
 import FrontApi from '../../Api/FrontendApi';
 import { mapStateToProps, mapDispatchToProps } from '../Ecom.connect';
 
+const ShopMore = (cartId, removeShoppingCart) => {
+    removeShoppingCart(cartId);
+    history.push('/');
+};
+
 class Confirmation extends Component {
 
     componentDidMount() {
@@ -71,7 +76,7 @@ class Confirmation extends Component {
 
     render() {
 
-        const { CartStore={} } = this.props;
+        const { CartStore={}, removeShoppingCart } = this.props;
         const { Cart={} } = CartStore;
 
         if (_isEmpty(Cart)) {
@@ -82,7 +87,7 @@ class Confirmation extends Component {
             <div className="makeStyles-grow-1">
                 {this.renderAppBar()}
                 {this.renderBodySection(Cart)}
-                <Button variant="contained" color="primary" onClick={() => history.push('/') } >
+                <Button variant="contained" color="primary" onClick={() => ShopMore(Cart.shoppingCartId, removeShoppingCart) } >
                     Shop Again
                 </Button>
             </div>

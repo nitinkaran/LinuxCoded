@@ -59,7 +59,7 @@ class Home extends Component {
         return (
             <div>
                 {this.renderHeaderSection()}
-                {/* {this.renderCarouselSection()} */}
+                {this.renderCarouselSection()}
             </div>
         );
     }
