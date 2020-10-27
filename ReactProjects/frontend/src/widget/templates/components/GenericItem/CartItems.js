@@ -26,6 +26,11 @@ const submitOrder = () => {
   history.push('/confirmation');
 };
 
+const deleteCart = (removeShoppingCart, shoppingCartId) => {
+  removeShoppingCart(shoppingCartId);
+  history.push('/');
+};
+
 const renderBodySection = (cartItem, shoppingCartId, removeCartItemFromShoppingCart) => {
 
   const { cartItemId, cartItemType, cartItemPrice, product } = cartItem;
@@ -135,7 +140,7 @@ const CartItems = ({CartProps}) => {
               variant="contained" 
               color="secondary" 
               startIcon={<DeleteIcon />} 
-              onClick={()=>removeShoppingCart(Cart.shoppingCartId)} 
+              onClick={()=>deleteCart(removeShoppingCart, Cart.shoppingCartId)} 
             >
               Remove Cart
             </Button>
