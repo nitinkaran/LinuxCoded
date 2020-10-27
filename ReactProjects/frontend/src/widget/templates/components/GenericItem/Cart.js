@@ -4,6 +4,7 @@ import _isEmpty from 'lodash/isEmpty';
 
 import { mapStateToProps, mapDispatchToProps} from '../../../Ecom.connect';
 import FrontendApi from '../../../../Api/FrontendApi';
+import history from '../../../../Redux/history';
 import CartItems from './CartItems';
 
 class Cart extends Component {
@@ -46,6 +47,7 @@ class Cart extends Component {
             return null;
         } else if ( !_isEmpty(Cart) && _isEmpty(Cart.cartItemList) ) {
             removeShoppingCart(Cart.shoppingCartId);
+            history.push('/');
         }
 
         return (
