@@ -2,7 +2,6 @@ import React from 'react';
 import CardColumns from "react-bootstrap/CardColumns";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-
 import history from '../../../../Redux/history';
 
 import ImageLocation from "../../ImageLocation";
