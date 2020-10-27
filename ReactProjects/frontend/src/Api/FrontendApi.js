@@ -63,4 +63,8 @@ export default class FrontendApi {
         return this.callAxios('post', `/checkout/${cartId}`, payload);
     }
 
+    static getShoppingCartById = (cartId) => {
+        return this.callAxios('get', `/cart/${cartId}`);
+    }
+
 }

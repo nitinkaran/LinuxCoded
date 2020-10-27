@@ -1,3 +1,5 @@
+import _isEmpty from 'lodash/isEmpty';
+
 import { 
     retrieveProductGroup, 
     retrieveProducts,
@@ -6,6 +8,8 @@ import {
     saveCartItem,
     saveShoppingCart
 } from '../Redux/Actions';
+
+import FrontApi from '../Api/FrontendApi';
 import { getProductCategoryName } from '../Redux/Reducer/FrontendSelector';
 
 export const mapStateToProps = (state) => {
@@ -43,5 +47,26 @@ export const mapDispatchToProps = (dispatch) => {
         saveShoppingCart : (response) => {
             dispatch(saveShoppingCart(response));
         },
+        
+        removeShoppingCart : (cartId) => {
+            FrontApi.removeShoppingCart(cartId)
+            .then(response => {
+                if (_isEmpty(response.data)) {
+                    dispatch(saveShoppingCart(response.data));
+                }
+            })
+        },
+
+        removeCartItemFromShoppingCart : (shoppingCartId, cartItemId) => {
+            FrontApi.removeCartItemFromShoppingCart(shoppingCartId, cartItemId)
+            .then(response => {
+                if (_isEmpty(response.data)) {
+                    FrontApi.getShoppingCartById(shoppingCartId)
+                    .then(res => {
+                        dispatch(saveShoppingCart(res.data));
+                    });
+                }
+            });
+        }
     };
 };
