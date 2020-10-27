@@ -1,6 +1,7 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
@@ -25,7 +26,7 @@ const submitOrder = () => {
   history.push('/confirmation');
 };
 
-const renderBodySection = (cartItem) => {
+const renderBodySection = (cartItem, shoppingCartId, removeCartItemFromShoppingCart) => {
 
   const { cartItemId, cartItemType, cartItemPrice, product } = cartItem;
   const { productName } = product;
@@ -47,9 +48,11 @@ const renderBodySection = (cartItem) => {
                   </Typography>
                 </Grid>
                 <Grid item>
-                  <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                    Can't Remove
-                  </Typography>
+                  <Button variant="contained" color="primary" onClick={() => removeCartItemFromShoppingCart(shoppingCartId, cartItemId) } >
+                    <Typography variant="body2" style={{ cursor: 'pointer' }}>
+                      Remove
+                    </Typography>
+                  </Button>
                 </Grid>
               </Grid>
               <Grid item>
@@ -63,7 +66,7 @@ const renderBodySection = (cartItem) => {
 };
 
 const renderAppBar = (Cart) => {
-  const { cartItemList } = Cart;
+  const { cartItemList, shoppingCartId } = Cart;
   const itemsInCart = cartItemList.length;
   return (
     <AppBar position="static" >
@@ -74,7 +77,7 @@ const renderAppBar = (Cart) => {
           </Badge>
         </IconButton>
         <Typography className="MuiTypography-root makeStyles-title-2 MuiTypography-h6 MuiTypography-noWrap" variant="h6" noWrap>
-          Your Shopping Cart
+          Your Shopping Cart (#{shoppingCartId})
         </Typography>
         <div className="makeStyles-grow-1" style={{ flexGrow: '1' }} />
         <IconButton aria-label="inherit" color="inherit" onClick={() => goToHomePage()} >
@@ -90,9 +93,9 @@ const renderAppBar = (Cart) => {
   );
 };
 
-const renderBody = (Cart) => {
-  const { cartItemList } = Cart;
-  return cartItemList.map(item => renderBodySection(item));
+const renderBody = (Cart, removeCartItemFromShoppingCart) => {
+  const { cartItemList, shoppingCartId } = Cart;
+  return cartItemList.map(item => renderBodySection(item, shoppingCartId, removeCartItemFromShoppingCart));
 };
 
 const renderTotalSection = (Cart) => {
@@ -123,11 +126,20 @@ const renderCheckout = () => {
   );
 };
 
-const CartItems = ({Cart}) => {
+const CartItems = ({CartProps}) => {
+    const { Cart, removeCartItemFromShoppingCart, removeShoppingCart } = CartProps;
     return (
         <div className="makeStyles-grow-1">
             {renderAppBar(Cart)}
-            {renderBody(Cart)}
+            <Button 
+              variant="contained" 
+              color="secondary" 
+              startIcon={<DeleteIcon />} 
+              onClick={()=>removeShoppingCart(Cart.shoppingCartId)} 
+            >
+              Remove Cart
+            </Button>
+            {renderBody(Cart, removeCartItemFromShoppingCart)}
             {renderTotalSection(Cart)}
             {renderCheckout()}
         </div>

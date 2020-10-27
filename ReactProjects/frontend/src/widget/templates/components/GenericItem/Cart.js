@@ -34,15 +34,22 @@ class Cart extends Component {
 
     render() {
 
-        const { CartStore={} } = this.props;
+        const { CartStore={}, removeCartItemFromShoppingCart, removeShoppingCart } = this.props;
         const { Cart={} } = CartStore;
+        const CartProps = {
+            Cart,
+            removeShoppingCart,
+            removeCartItemFromShoppingCart
+        };
 
         if (_isEmpty(Cart)) {
             return null;
+        } else if ( !_isEmpty(Cart) && _isEmpty(Cart.cartItemList) ) {
+            removeShoppingCart(Cart.shoppingCartId);
         }
 
         return (
-            <CartItems Cart={Cart} />
+            <CartItems CartProps={CartProps}  />
         );
     } 
 };
