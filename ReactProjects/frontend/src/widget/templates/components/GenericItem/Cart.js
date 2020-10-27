@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import _isEmpty from 'lodash/isEmpty';
-// import Image from "react-bootstrap/Image";
-// import Card from 'react-bootstrap/Card';
-// import Button from 'react-bootstrap/Button';
 
-// import ImageLocation from "../../ImageLocation";
-// import history from '../../../../Redux/history';
 import { mapStateToProps, mapDispatchToProps} from '../../../Ecom.connect';
 import FrontendApi from '../../../../Api/FrontendApi';
+import CartItems from './CartItems';
 
 class Cart extends Component {
 
@@ -37,8 +33,16 @@ class Cart extends Component {
     }
 
     render() {
+
+        const { CartStore={} } = this.props;
+        const { Cart={} } = CartStore;
+
+        if (_isEmpty(Cart)) {
+            return null;
+        }
+
         return (
-            <div>I am now at the redirected CART page</div>
+            <CartItems Cart={Cart} />
         );
     } 
 };

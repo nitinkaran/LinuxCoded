@@ -50,4 +50,17 @@ export default class FrontendApi {
         return this.callAxios('post', `/cart/${cartId}`, cartItem);
     }
 
+    static removeCartItemFromShoppingCart = (cartId, cartItemId) => {
+        return this.callAxios('delete', `/cart/${cartId}/cartItem/${cartItemId}`);
+    }
+
+    static removeShoppingCart = (cartId) => {
+        return this.callAxios('delete', `/cart/${cartId}`);
+    }
+
+    static checkoutFromShoppingCart = (cartId) => {
+        const payload = {};
+        return this.callAxios('post', `/checkout/${cartId}`, payload);
+    }
+
 }
