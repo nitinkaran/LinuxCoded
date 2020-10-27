@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Badge from '@material-ui/core/Badge';
+import Button from '@material-ui/core/Button';
 
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -18,6 +19,10 @@ const goToHomePage = () => {
 
 const goToBackPage = () => {
   history.goBack();
+};
+
+const submitOrder = () => {
+  history.push('/confirmation');
 };
 
 const renderBodySection = (cartItem) => {
@@ -62,26 +67,26 @@ const renderAppBar = (Cart) => {
   const itemsInCart = cartItemList.length;
   return (
     <AppBar position="static" >
-        <Toolbar>
-          <IconButton aria-label="notifications" color="inherit" onClick={() => goToBackPage()} >
-            <Badge color="secondary">
-              <ArrowBackIcon />
-            </Badge>
-          </IconButton>
-          <Typography className="MuiTypography-root makeStyles-title-2 MuiTypography-h6 MuiTypography-noWrap" variant="h6" noWrap>
-            Your Shopping Cart
-          </Typography>
-          <div className="makeStyles-grow-1" style={{ flexGrow: '1' }} />
-          <IconButton aria-label="inherit" color="inherit" onClick={() => goToHomePage()} >
-            <Badge color="secondary">
-              Shop More
-            </Badge>
-          </IconButton>
-          <Badge color="secondary" badgeContent={`${itemsInCart}`} >
-            <ShoppingCartIcon />
+      <Toolbar>
+        <IconButton aria-label="notifications" color="inherit" onClick={() => goToBackPage()} >
+          <Badge color="secondary">
+            <ArrowBackIcon />
           </Badge>
-        </Toolbar>
-      </AppBar>
+        </IconButton>
+        <Typography className="MuiTypography-root makeStyles-title-2 MuiTypography-h6 MuiTypography-noWrap" variant="h6" noWrap>
+          Your Shopping Cart
+        </Typography>
+        <div className="makeStyles-grow-1" style={{ flexGrow: '1' }} />
+        <IconButton aria-label="inherit" color="inherit" onClick={() => goToHomePage()} >
+          <Badge color="secondary">
+            Shop More
+          </Badge>
+        </IconButton>
+        <Badge color="secondary" badgeContent={`${itemsInCart}`} >
+          <ShoppingCartIcon />
+        </Badge>
+      </Toolbar>
+    </AppBar>
   );
 };
 
@@ -110,12 +115,21 @@ const renderTotalSection = (Cart) => {
   );
 };
 
+const renderCheckout = () => {
+  return (
+    <Button variant="contained" color="primary" onClick={() => submitOrder() } >
+      Complete Order
+    </Button>
+  );
+};
+
 const CartItems = ({Cart}) => {
     return (
         <div className="makeStyles-grow-1">
             {renderAppBar(Cart)}
             {renderBody(Cart)}
             {renderTotalSection(Cart)}
+            {renderCheckout()}
         </div>
     );
 };
