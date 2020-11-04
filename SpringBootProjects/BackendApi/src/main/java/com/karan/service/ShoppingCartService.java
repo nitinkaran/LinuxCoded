@@ -67,13 +67,19 @@ public class ShoppingCartService {
 
 	public void deleteCartItemFromCart(String cartId, String cartItemId) {
 		Optional<ShoppingCart> cart = shoppingCartRepository.findById(cartId);
+		List<CartItem> removeCartItemList = new ArrayList<>(); 
 		ShoppingCart shoppingCart = cart.get();
+		double cartItemPrices = 0;
 		for(CartItem cartItem : shoppingCart.getCartItemList()) {
 			if (cartItem.getCartItemId().equals(cartItemId)) {
-				shoppingCart.getCartItemList().remove(cartItem);
-				cartItemRepository.deleteById(cartItemId);
+				cartItemPrices += cartItem.getCartItemPrice();
+				removeCartItemList.add(cartItem);
 			}
 		}
+		double currentTotalPrice = shoppingCart.getShoppingCartTotalPrice() - cartItemPrices;
+		shoppingCart.setShoppingCartTotalPrice(currentTotalPrice);
+		shoppingCart.getCartItemList().removeAll(removeCartItemList);
+		cartItemRepository.deleteById(cartItemId);
 		shoppingCartRepository.save(shoppingCart);
 	}
 
