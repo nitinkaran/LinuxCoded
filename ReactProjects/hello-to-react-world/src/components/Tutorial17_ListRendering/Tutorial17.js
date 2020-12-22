@@ -8,7 +8,7 @@ import Persons from './Persons';
 
 function Tutorial17() {
     const names = ['Bruce', 'Clark', 'Diana'];
-    const namesList = names.map(name => <h2>{name}</h2> );
+    const namesList = names.map(name => <h2 key={name} >{name}</h2> );
 
     const persons = [
         { id: 1, name: 'Bruce', age: 23, skill: 'React' },
@@ -21,7 +21,7 @@ function Tutorial17() {
     return (
         <div>
             {namesList}
-            {persons.map(person => <Persons person={person} />)}
+            {persons.map((person, index) => <Persons key={index} person={person} />)}
         </div>
     );
 }
