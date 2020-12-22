@@ -13,6 +13,7 @@ import './App.css';
 // import Tutorial21 from './components/Tutorial21_FormHandling/Tutorial21';
 
 import Clock from './components/Clock/Clock';
+import Clock1 from './components/Clock/Clock1';
 
 class App extends Component {
   render() {
@@ -36,6 +37,7 @@ class App extends Component {
         <hr />
         <Tutorial21 /> */}
         <Clock />
+        <Clock1 />
       </div>
     );
   }
