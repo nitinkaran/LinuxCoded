@@ -19,6 +19,7 @@ import './App.css';
 // import Tutorial28 from './components/Tutorial28_Refs/Tutorial28';
 
 import Tutorial34 from './components/Tutorial34_HOC/Tutorial34';
+import Tutorial38 from './components/Tutorial38_Context/Tutorial38';
 
 class App extends Component {
   render() {
@@ -51,6 +52,8 @@ class App extends Component {
         <hr />
         <Tutorial28 /> */}
         <Tutorial34 />
+        <hr />
+        <Tutorial38 />
       </div>
     );
   }

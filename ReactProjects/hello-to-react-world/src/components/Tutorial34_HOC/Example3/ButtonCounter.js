@@ -7,7 +7,7 @@ class ButtonCounter extends Component {
         const {count, incrementCount, value} = this.props;
         return (
             <div>
-                <button onClick={incrementCount}>Click {count} times has {value}</button>           
+                <button onClick={incrementCount}>Click {count} times with {value}</button>           
             </div>
         );
     }
