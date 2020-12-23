@@ -13,10 +13,12 @@ import './App.css';
 // import Tutorial21 from './components/Tutorial21_FormHandling/Tutorial21';
 // import Clock from './components/Clock/Clock';
 // import Clock1 from './components/Clock/Clock1';
+// import LiftingStateUp from './components/Tutorial_LiftingStateUp/Calculator';
+// import Tutorial26 from './components/Tutorial26_PureComponent/Tutorial26';
+// import Tutorial27 from './components/Tutorial27_ReactMemo/Tutorial27';
+// import Tutorial28 from './components/Tutorial28_Refs/Tutorial28';
 
-import LiftingStateUp from './components/Tutorial_LiftingStateUp/Calculator';
-import Tutorial26 from './components/Tutorial26_PureComponent/Tutorial26';
-import Tutorial27 from './components/Tutorial27_ReactMemo/Tutorial27';
+import Tutorial34 from './components/Tutorial34_HOC/Tutorial34';
 
 class App extends Component {
   render() {
@@ -40,12 +42,15 @@ class App extends Component {
         <hr />
         <Tutorial21 />
         <Clock />
-        <Clock1 /> */}
+        <Clock1 />
         <LiftingStateUp />
         <hr />
         <Tutorial26 />
         <hr />
         <Tutorial27 />
+        <hr />
+        <Tutorial28 /> */}
+        <Tutorial34 />
       </div>
     );
   }
