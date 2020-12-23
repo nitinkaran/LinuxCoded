@@ -22,6 +22,17 @@ class Method2 extends Component {
          * that value that's why () parenthesis are required
          * 
          * This approach is best suited if we want to pass some parameters to our handler 
+         * 
+         * 
+         * ------------------------------------------------------------------------------
+         *                  DISADVANTAGE OF THIS METHOD
+         * ------------------------------------------------------------------------------
+         * The problem with this syntax is that a different callback is created each time 
+         * the LoggingButton renders. In most cases, this is fine. However, if this 
+         * callback is passed as a prop to lower components, those components might do an 
+         * extra re-rendering. We generally recommend binding in the constructor or using 
+         * the class fields syntax, to avoid this sort of performance problem.
+         * 
          */
 
         return (
