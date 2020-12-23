@@ -11,9 +11,12 @@ import './App.css';
 // import Tutorial15 from './components/Tutorial15_PassMethodsAsProps/Tutorial15';
 // import Tutorial17 from './components/Tutorial17_ListRendering/Tutorial17';
 // import Tutorial21 from './components/Tutorial21_FormHandling/Tutorial21';
+// import Clock from './components/Clock/Clock';
+// import Clock1 from './components/Clock/Clock1';
 
-import Clock from './components/Clock/Clock';
-import Clock1 from './components/Clock/Clock1';
+import LiftingStateUp from './components/Tutorial_LiftingStateUp/Calculator';
+import Tutorial26 from './components/Tutorial26_PureComponent/Tutorial26';
+import Tutorial27 from './components/Tutorial27_ReactMemo/Tutorial27';
 
 class App extends Component {
   render() {
@@ -35,9 +38,14 @@ class App extends Component {
         <hr />
         <Tutorial17 />
         <hr />
-        <Tutorial21 /> */}
+        <Tutorial21 />
         <Clock />
-        <Clock1 />
+        <Clock1 /> */}
+        <LiftingStateUp />
+        <hr />
+        <Tutorial26 />
+        <hr />
+        <Tutorial27 />
       </div>
     );
   }
