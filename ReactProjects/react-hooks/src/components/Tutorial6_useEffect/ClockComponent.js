@@ -15,7 +15,7 @@ class ClockComponent extends Component {
         })
     }
 
-    componentDidUpdate(prevProps, prevState){        
+    componentDidUpdate(prevState){
         if(prevState.time !== this.state.time) {
             setInterval(() => {
                 this.setState({

@@ -16,7 +16,10 @@ function MimicComponetWillUnmount() {
 
         /**
          * To clean up the useEffect hook once unmounted, we need to return a function
-         * to unmount the event listener
+         * to unmount the event listener i.e. clear the state that could be updated
+         * by react even after unmounting happens. This happens bcz once we disable the
+         * event listener, react tries to update the state which happens after unmounting
+         * of the component
          */
 
         return () => {
