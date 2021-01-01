@@ -2,7 +2,9 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 function RetrieveData() {
+    let initialLoad = false;
     const [list, setList] = useState([]);
+    const [load, setLoad] = useState(initialLoad);
 
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/posts')
@@ -17,9 +19,13 @@ function RetrieveData() {
 
     return (
         <div>
-            <ul>
-                { list.map((item, index) => <li key={index}>{item.title}</li>)}
-            </ul>
+            <button onClick={()=> setLoad(prevState => !prevState)}>Load All Data Now</button>
+            {
+                load &&
+                <ul>
+                    { list.map((item, index) => <li key={index}>{item.title}</li>)}
+                </ul>
+            }
         </div>
     );
 }

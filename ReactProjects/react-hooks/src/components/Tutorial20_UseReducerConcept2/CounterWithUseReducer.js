@@ -14,6 +14,10 @@ const reducer = (state, action) => {
     }
 }
 
+const m = (val) => {
+    return {type : 'increment', value : val}
+}
+
 function CounterWithUseReducer() {
     const [count, dispatch] = useReducer(reducer, initialState);
     const [countTwo, dispatchTwo] = useReducer(reducer, initialState);
@@ -21,7 +25,7 @@ function CounterWithUseReducer() {
     return (
         <div>
             <h2>First Counter  : {count.firstCounter}</h2>
-            <button onClick={() => dispatch({type : 'increment', value : 1})}>Increment</button>
+            <button onClick={() => dispatch(m(10))}>Increment</button>
             <button onClick={() => dispatch({type : 'decrement', value : 1})}>Decrement</button>
             <button onClick={() => dispatch({type : 'reset'})}>Reset</button>
             <br /><br />

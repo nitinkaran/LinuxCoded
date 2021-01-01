@@ -6,25 +6,31 @@ function HookCounter3(props) {
 
     /**
      * This will increment by 1 instead of 5 bcz the count is not dependent on the 
-     * previous count value within the loop
+     * previous count value within the loop. The setCount method works in Async way
+     * after running for 5 times all the setCount methods are merged into one and 
+     * then it updates the count value due to which the value remains 1 even after
+     * the loop ran for 5 times
      */
     // const incrementFive = () => {
     //     for(let i=0; i<5; i++){
-    //         setCount( count + 1 )
+    //         // console.log('Within Loop', count);
+    //         setCount( count +1)
     //     }
     // }
 
     /**
      * This implementation correctly increments the value by 5 bcz it keeps count of
-     * the previous state value and then increment the count
+     * the previous state value and then increment the count. 
+     * setCount is also an ASYNC call same as setState
      */
     const incrementFive = () => {
         for(let i=0; i<5; i++){
             setCount( prevCount => prevCount + 1 )
+            console.log("After set Count : "+ count);
         }
     }
 
-    const callIncrement = () => {
+    const callIncrement = () => {        
         setCount(count => count + 1);   // safe method of increment the count 
         setCount(count => count + 1);
         setCount(count => count + 1);
