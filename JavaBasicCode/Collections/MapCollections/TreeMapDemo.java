@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.*;
 import java.util.stream.Stream;
 import java.util.stream.Collectors;
 
@@ -31,6 +32,10 @@ public class TreeMapDemo{
             tm.putIfAbsent(a[i],1);
         }
         System.out.println(tm);
+
+        Set<Integer>s1 = tm.keySet();
+        Integer[] arr = s1.toArray(new Integer[s1.size()]);
+        arr.stream().forEach(item -> System.out.println(item));
 
         // METHOD 1 - to get Array of keys
         System.out.println("METHOD 1 - to get Array of keys");
