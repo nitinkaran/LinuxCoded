@@ -1,12 +1,16 @@
 import React, {useState} from 'react';
-import { useHistory } from 'react-router-dom';
+import history from '../history';
 
 function SearchCandidate({searchProps}) {
     const [name, setName] = useState('');
-    let history = useHistory();
     const clearStates = () => {
         setName('');
-        searchProps({searchedCandidateList: {}})
+        searchProps({
+            searchedCandidateList: {},
+            shortList: [],
+            rejectList: []
+        });
+        history.push('/');
     }
     return (
         <div>
@@ -18,11 +22,6 @@ function SearchCandidate({searchProps}) {
             />
             <button onClick={()=> searchProps({searchedCandidate: name})}>Search</button>
             <button onClick={clearStates}>Clear</button>
-
-            {/* <br />
-            <button onClick={()=> showSelectedList(searchProps)}>Show Select List</button>
-            <br />
-            <button onClick={}>Show Reject List</button> */}
         </div>
     );
 }

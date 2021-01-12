@@ -1,11 +1,9 @@
 import React from 'react';
 import CardColumns from "react-bootstrap/CardColumns";
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-
 
 const createCardColumns = (item, index) => {
-    const { Image, name, id } = item;
+    const { Image, name} = item;
     return (
         <Card style={{ width: '18rem', height: '25rem' }} key={index} >
             <Card.Img style={{height: '20rem' }} variant="top" src={Image} />
